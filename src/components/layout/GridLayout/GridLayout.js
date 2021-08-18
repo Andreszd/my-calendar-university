@@ -1,7 +1,7 @@
-import './GridLayout.css'
+import "./GridLayout.css";
 
 const GridLayout = ({ children }) => {
-  return <div class="l-grid">{children}</div>;
+  return <div className="l-grid">{children}</div>;
 };
 
 export default GridLayout;

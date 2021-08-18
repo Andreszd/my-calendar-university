@@ -10,5 +10,10 @@ html {
 
 body {
   margin: 0;
+}
+body,
+button,
+input,
+textarea {
   font-family: "Jost", sans-serif;
 }
