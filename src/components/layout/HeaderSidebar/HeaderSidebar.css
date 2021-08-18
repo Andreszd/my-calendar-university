@@ -1,0 +1,6 @@
+.l-header-sidebar {
+    display: flex;
+    justify-content: center;
+    padding: var(--size-padding-base) 0;
+    border-bottom: 1px solid var(--gray-10);
+}

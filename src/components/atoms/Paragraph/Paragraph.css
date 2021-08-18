@@ -1,0 +1,25 @@
+.paragraph--size-small {
+    font-size: var(--size-font-small);
+}
+.paragraph--size-normal {
+    font-size: var(--size-font-normal);
+}
+.paragraph--size-medium {
+    font-size: var(--size-font-medium);
+}
+.paragraph--size-big {
+    font-size: var(--size-font-big);
+}
+.paragraph.is-inline {
+    display: inline-block;
+}
+.paragraph--weight-bold {
+    font-weight: bold;
+}
+.paragraph--weight-medium {
+    font-weight: 500;
+    font-weight: medium;
+}
+.paragraph--weight-normal {
+    font-weight: 300;
+}
