@@ -1,6 +1,15 @@
 .paragraph.is-styles-reset {
     margin: 0;
 }
+.paragraph--color-gray {
+    color: var(--gray-40);
+}
+.paragraph--color-gray-ligth {
+    color: var(--gray-20);
+}
+.paragraph--color-black {
+    color: #020202;
+}
 .paragraph--size-small {
     font-size: var(--size-font-small);
 }

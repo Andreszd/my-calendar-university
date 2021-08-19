@@ -8,7 +8,12 @@ const UserInfo = () => {
             <Paragraph size="medium" weight="bold" isResetStyles={true}>
                 Username
             </Paragraph>
-            <Paragraph size="small" weight="medium" isResetStyles={true}>
+            <Paragraph
+                size="small"
+                color="gray"
+                weight="medium"
+                isResetStyles={true}
+            >
                 nickname@correo.com
             </Paragraph>
         </div>

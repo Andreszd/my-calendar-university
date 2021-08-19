@@ -29,7 +29,7 @@ const Paragraph = ({
 Paragraph.propTypes = {
     children: PropTypes.string.isRequired,
     size: PropTypes.oneOf(["very-small", "small", "normal", "medium", "big"]),
-    color: PropTypes.string,
+    color: PropTypes.oneOf(["gray-ligth", "gray", "black"]),
     weight: PropTypes.oneOf(["normal", "medium", "bold"]),
     isInline: PropTypes.bool,
     isResetStyles: PropTypes.bool,
@@ -39,6 +39,7 @@ Paragraph.defaultProps = {
     size: "normal",
     weight: "normal",
     isInline: false,
+    color: "black",
     isResetStyles: false,
 };
 
