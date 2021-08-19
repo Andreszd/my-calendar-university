@@ -1,3 +1,6 @@
+.paragraph.is-styles-reset {
+    margin: 0;
+}
 .paragraph--size-small {
     font-size: var(--size-font-small);
 }
