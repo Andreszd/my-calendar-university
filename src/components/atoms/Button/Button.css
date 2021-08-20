@@ -8,6 +8,7 @@
     font-weight: bold;
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
+    gap: 6px;
 }
 
 .button:hover {
@@ -26,6 +27,9 @@
     color: var(--blue-10);
     padding: 0;
     border-radius: 0;
+}
+.button--quarternary {
+    padding: 0;
 }
 
 .button--tertiary:hover {

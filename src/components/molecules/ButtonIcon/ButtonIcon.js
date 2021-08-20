@@ -9,7 +9,12 @@ const ButtonIcon = ({ children, type, icon }) => {
     return (
         <div className="button-icon">
             <Button type={type}>
-                <Icon type={icon} size="sm" />
+                <Icon
+                    type={icon}
+                    size="sm"
+                    hasBackground={type === "quarternary"}
+                    hasInheritedColor={!(type === "quarternary")}
+                />
                 {children}
             </Button>
         </div>
@@ -17,11 +22,11 @@ const ButtonIcon = ({ children, type, icon }) => {
 };
 
 ButtonIcon.propTypes = {
-    children: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(["primary", "secondary", "tertiary"]),
+    children: PropTypes.string,
+    type: PropTypes.oneOf(["primary", "secondary", "tertiary", "quaternary"]),
     icon: PropTypes.oneOf(Object.keys(libIcons)),
 };
-
+//TODO: delete icon default
 ButtonIcon.defaultProps = {
     type: "primary",
     icon: "icon-settings",

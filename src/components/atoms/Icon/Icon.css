@@ -1,7 +1,6 @@
 .icon {
-    color: inherit;
+    color: var(--gray-20);
     align-items: center;
-    padding: 0.4rem;
 }
 .icon svg {
     display: block;
@@ -11,6 +10,10 @@
     cursor: pointer;
 }
 .icon.has-background {
+    padding: 0.5rem;
     border-radius: 50%;
     background-color: var(--white-30);
+}
+.icon.has-inherited-color {
+    color: inherit;
 }

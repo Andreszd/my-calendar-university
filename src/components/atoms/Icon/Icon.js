@@ -5,12 +5,13 @@ import classNames from "classnames";
 
 import PropTypes from "prop-types";
 import "./Icon.css";
-const Icon = ({ type, hasBackground, size }) => {
+const Icon = ({ type, hasBackground, size, hasInheritedColor }) => {
     const Svg = mapIcon(type);
     return (
         <div
             className={classNames("icon", {
                 "has-background": hasBackground,
+                "has-inherited-color": hasInheritedColor,
             })}
         >
             <Svg width={mapSize(size)} height={mapSize(size)} />
@@ -21,9 +22,11 @@ Icon.propTypes = {
     type: PropTypes.string.isRequired,
     size: PropTypes.oneOf(["sm", "md", "lg", "xl"]).isRequired,
     hasBackground: PropTypes.bool,
+    hasInheritedColor: PropTypes.bool,
 };
 Icon.defaultProps = {
     hasBackground: false,
+    hasInheritedColor: true,
 };
 
 export default Icon;
