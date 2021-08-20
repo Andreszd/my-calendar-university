@@ -1,4 +1,7 @@
 .button {
+    display: flex;
+    align-items: center;
+    align-content: center;
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 2rem;

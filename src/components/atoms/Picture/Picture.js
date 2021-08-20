@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
 
+import "./Picture.css";
+
+//FIXME: change managment prop src
+
 const Picture = ({ src, alt, width, height, isRounded }) => (
-    <picture>
-        <img src={src} alt={alt} style={{ width, height }} />
+    <picture className="img-container" style={{ height: height, width: width }}>
+        <img src={src} alt={alt} />
     </picture>
 );
 

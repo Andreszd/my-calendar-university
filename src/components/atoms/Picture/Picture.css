@@ -1,0 +1,7 @@
+.img-container {
+    display: block;
+}
+
+.img-container img {
+    width: 100%;
+}
