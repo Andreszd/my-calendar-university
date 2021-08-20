@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
+import { typeButtons } from "../../../enums/typeButtons";
+
 import "./Button.css";
 
 const Button = ({ type, children }) => {
@@ -17,7 +19,7 @@ const Button = ({ type, children }) => {
 
 Button.propTypes = {
     children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-    type: PropTypes.oneOf(["primary", "secondary", "tertiary"]),
+    type: PropTypes.oneOf(typeButtons),
 };
 
 Button.defaultProps = {

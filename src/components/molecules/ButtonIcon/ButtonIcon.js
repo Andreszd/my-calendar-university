@@ -2,6 +2,7 @@ import Button from "../../atoms/Button";
 import Icon from "../../atoms/Icon";
 
 import { libIcons } from "../../../libs/mapIcons";
+import { typeButtons } from "../../../enums/typeButtons";
 
 import PropTypes from "prop-types";
 
@@ -12,8 +13,8 @@ const ButtonIcon = ({ children, type, icon }) => {
                 <Icon
                     type={icon}
                     size="sm"
-                    hasBackground={type === "quarternary"}
-                    hasInheritedColor={!(type === "quarternary")}
+                    hasBackground={type === "quaternary"}
+                    hasInheritedColor={!(type === "quaternary")}
                 />
                 {children}
             </Button>
@@ -23,7 +24,7 @@ const ButtonIcon = ({ children, type, icon }) => {
 
 ButtonIcon.propTypes = {
     children: PropTypes.string,
-    type: PropTypes.oneOf(["primary", "secondary", "tertiary", "quaternary"]),
+    type: PropTypes.oneOf(typeButtons),
     icon: PropTypes.oneOf(Object.keys(libIcons)),
 };
 //TODO: delete icon default

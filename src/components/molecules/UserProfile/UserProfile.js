@@ -8,7 +8,7 @@ const UserProfile = () => {
         <div className="user-profile">
             <Picture src="/assets/images/avatar.svg" width={70} height={70} />
             <UserInfo />
-            <ButtonIcon type="quarternary" />
+            <ButtonIcon type="quaternary" />
         </div>
     );
 };
