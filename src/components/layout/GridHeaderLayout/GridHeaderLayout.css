@@ -1,0 +1,6 @@
+.l-grid-header {
+    height: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 300px 1fr;
+}

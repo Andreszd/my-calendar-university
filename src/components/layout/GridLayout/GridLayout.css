@@ -3,7 +3,7 @@
     height: 100vh;
     display: grid;
     grid-template-columns: 300px 1fr;
-    grid-template-rows: 80px auto;
+    grid-template-rows: 70px auto;
     grid-template-areas: "header header" "sidebar calendar";
-    background-color: var(--body-bg-color);
+    background-color: var(--white-20);
 }

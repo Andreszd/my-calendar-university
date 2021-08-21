@@ -1,0 +1,10 @@
+.header-user {
+    /* 
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    background-color: var(--white-10);
+    align-items: center; */
+    grid-area: header;
+    background-color: var(--white-10);
+    border-bottom: 1px solid var(--white-50);
+}

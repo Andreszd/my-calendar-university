@@ -1,4 +1,5 @@
 .sidebar {
     grid-area: sidebar;
+    padding: 2rem;
     background-color: var(--white-10);
 }

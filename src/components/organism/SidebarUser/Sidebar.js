@@ -2,7 +2,7 @@ import UserProfile from "../../molecules/UserProfile/UserProfile";
 
 import "./Sidebar.css";
 
-const Sidebar = () => {
+const SidebarUser = () => {
     return (
         <div className="sidebar">
             <UserProfile />
@@ -10,4 +10,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default SidebarUser;

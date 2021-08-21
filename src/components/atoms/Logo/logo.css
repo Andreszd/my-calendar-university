@@ -1,7 +1,9 @@
 .logo {
+    display: inline-block;
     color: var(--gray-20);
-    text-transform: capitalize;
-    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-size: 1rem;
     font-weight: bold;
     letter-spacing: 1px;
+    text-align: center;
 }
