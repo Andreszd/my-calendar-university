@@ -5,4 +5,10 @@
     --size-font-normal: 13px;
     --size-font-medium: 15px;
     --size-font-big: 17px;
+
+    --size-block-calendar-min-width: 95px;
+    --size-block-calendar-min-height: 100px;
+
+    --size-block-calendar-max-width: 195px;
+    --size-block-calendar-max-height: 200px;
 }

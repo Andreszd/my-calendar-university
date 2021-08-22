@@ -1,0 +1,12 @@
+.l-grid-calendar {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 60px repeat(6, var(--size-block-calendar-max-width));
+    grid-template-rows: auto repeat(
+            20,
+            minmax(var(--size-block-calendar-min-height))
+        );
+    overflow: auto;
+    background-color: var(--white-10);
+}
