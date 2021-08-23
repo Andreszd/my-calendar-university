@@ -7,6 +7,4 @@
             20,
             minmax(var(--size-block-calendar-min-height))
         );
-    overflow: auto;
-    background-color: var(--white-10);
 }

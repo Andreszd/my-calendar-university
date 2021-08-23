@@ -1,0 +1,5 @@
+.user-navbar {
+    display: flex;
+    gap: 1rem;
+    color: var(--blue-10);
+}

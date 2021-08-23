@@ -1,0 +1,5 @@
+.user-calendar {
+    grid-area: calendar;
+    width: 100%;
+    overflow: hidden;
+}

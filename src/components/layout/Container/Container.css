@@ -1,4 +1,6 @@
 .container {
+    width: 100%;
+    overflow: hidden;
 }
 
 .container.has-full-width {

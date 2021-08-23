@@ -1,7 +1,22 @@
 .week-calendar {
-    grid-area: calendar;
     max-width: 100%;
-    max-height: 100%;
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
+    height: 500px;
+    background-color: var(--white-10);
+    border-top-left-radius: 1rem;
+}
+.week-calendar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #f5f5f5;
+}
+.week-calendar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--gray-10);
+}
+.week-calendar::-webkit-scrollbar-track {
+    border: 1px solid var(--gray-10);
+    border-radius: 10px;
+    background-color: #f5f5f5;
 }

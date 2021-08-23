@@ -1,6 +1,10 @@
-.segment-hour {
+.card-calendar {
     padding: 1rem 0;
     border-top: 1px solid var(--gray-10);
     border-left: 1px solid var(--gray-10);
     text-align: center;
+}
+
+.card-calendar:nth-of-type(1) {
+    border-top-left-radius: 1rem;
 }

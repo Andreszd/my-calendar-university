@@ -7,7 +7,7 @@ import { calendarKeys, calendarValues } from "./constants";
 import { parseToString } from "../../../libs/toString";
 
 import "./WeekCalendar.css";
-
+//TODO: Refactor how rendered all cards
 const WeekCalendar = () => {
     return (
         <div className="week-calendar">

@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 const CardCalendar = ({ children, row, col }) => {
     return (
         <div
-            className="segment-hour"
+            className="card-calendar"
             style={{ gridRow: mapRow(row), gridColumn: mapColums(col) }}
         >
             {children}

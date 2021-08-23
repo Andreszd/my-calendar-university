@@ -1,5 +1,6 @@
 import { mapIcon } from "../../../libs/mapIcons";
 import { mapSize } from "../../../libs/mapSizes";
+import { libIcons } from "../../../libs/mapIcons";
 
 import classNames from "classnames";
 
@@ -19,7 +20,7 @@ const Icon = ({ type, hasBackground, size, hasInheritedColor }) => {
     );
 };
 Icon.propTypes = {
-    type: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(Object.keys(libIcons)),
     size: PropTypes.oneOf(["sm", "md", "lg", "xl"]).isRequired,
     hasBackground: PropTypes.bool,
     hasInheritedColor: PropTypes.bool,
