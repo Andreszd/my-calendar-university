@@ -2,7 +2,6 @@
     max-width: 100%;
     width: 100%;
     overflow: auto;
-    height: 500px;
     background-color: var(--white-10);
     border-top-left-radius: 1rem;
 }

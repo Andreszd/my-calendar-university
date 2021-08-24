@@ -1,0 +1,10 @@
+.header-user-calendar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-user-calendar__title {
+    text-align: center;
+}
