@@ -1,0 +1,37 @@
+h1 {
+    font-size: var(--size-heading-large);
+}
+h2 {
+    font-size: var(--size-heading-medium);
+}
+h3 {
+    font-size: var(--size-heading-small);
+}
+.heading--color-base {
+    color: var(--black-10);
+}
+.heading--color-primary {
+    color: var(--black-10);
+}
+.heading--color-secondary {
+    color: var(--black-10);
+}
+.heading--size-sm {
+    font-size: var(--size-heading-small);
+}
+.heading--size-md {
+    font-size: var(--size-heading-medium);
+}
+.heading--size-lg {
+    font-size: var(--size-heading-large);
+}
+
+.heading--text-transform-capitalize {
+    text-transform: capitalize;
+}
+.heading--text-transform-lowercase {
+    text-transform: lowercase;
+}
+.heading--text-transform-uppercase {
+    text-transform: uppercase;
+}
