@@ -3,9 +3,9 @@ import ButtonIcon from '../../molecules/ButtonIcon';
 
 import PropTypes from 'prop-types';
 
-import './Subjects.css';
+import './HeaderSubjects.css';
 
-const Subjects = ({ isShowing, setShow }) => {
+const HeaderSubjects = ({ isShowing, setShow }) => {
   //TODO refactor classnames
 
   return (
@@ -21,8 +21,8 @@ const Subjects = ({ isShowing, setShow }) => {
   );
 };
 
-Subjects.propTypes = {
+HeaderSubjects.propTypes = {
   isShowing: PropTypes.bool,
   setShow: PropTypes.func,
 };
-export default Subjects;
+export default HeaderSubjects;

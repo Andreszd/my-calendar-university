@@ -1,4 +1,4 @@
-import Subjects from '../../molecules/Subjects/Subjects';
+import SubjectsOfCarrer from '../SubjectsOfCarreer';
 import UserProfile from '../../molecules/UserProfile/UserProfile';
 
 import useHandlerSubjects from '../../../hooks/useHandlerSubjects';
@@ -11,7 +11,7 @@ const SidebarUser = () => {
   return (
     <div className="sidebar">
       {isShowing ? <UserProfile /> : null}
-      <Subjects isShowing={isShowing} setShow={setShow} />
+      <SubjectsOfCarrer isShowing={isShowing} setShow={setShow} />
     </div>
   );
 };
