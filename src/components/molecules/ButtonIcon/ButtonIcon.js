@@ -6,10 +6,10 @@ import { typeButtons } from '../../../enums/typeButtons';
 
 import PropTypes from 'prop-types';
 
-const ButtonIcon = ({ children, type, icon }) => {
+const ButtonIcon = ({ children, type, icon, onClick }) => {
   return (
     <div className="button-icon">
-      <Button type={type}>
+      <Button type={type} onClick={onClick}>
         <Icon
           type={icon}
           size="sm"
@@ -26,6 +26,7 @@ ButtonIcon.propTypes = {
   children: PropTypes.string,
   type: PropTypes.oneOf(typeButtons),
   icon: PropTypes.oneOf(Object.keys(libIcons)),
+  onClick: PropTypes.func,
 };
 //TODO: delete icon default
 ButtonIcon.defaultProps = {
