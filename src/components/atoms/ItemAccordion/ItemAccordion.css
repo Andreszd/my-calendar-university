@@ -1,0 +1,14 @@
+.item-accordion__header {
+  border-bottom: 1px solid var(--gray-10);
+  user-select: none;
+}
+.item-accordion__header:hover {
+  background-color: var(--white-20);
+}
+.item-accordion__text {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+.item-accordion__childs {
+  list-style: none;
+}

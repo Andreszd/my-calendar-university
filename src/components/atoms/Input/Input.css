@@ -1,0 +1,14 @@
+.input {
+  display: inline;
+  border: 1px solid var(--gray-20);
+  border-radius: 4px;
+  padding: 0.5rem;
+  background-color: transparent;
+}
+.input-select {
+  color: var(--gray-40);
+  appearance: none;
+}
+.full-width {
+  width: 100%;
+}
