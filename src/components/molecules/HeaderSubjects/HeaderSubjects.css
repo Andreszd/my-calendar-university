@@ -3,3 +3,14 @@
   justify-content: space-between;
   align-items: center;
 }
+.header-subjects__icon {
+  color: var(--blue-10);
+  transform: rotate(180deg);
+  transition: transform ease 0.2s;
+}
+.isActive {
+  transform: rotate(0deg);
+}
+.header-subjects:hover {
+  cursor: pointer;
+}
