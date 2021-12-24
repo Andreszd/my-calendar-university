@@ -1,3 +1,16 @@
-.item-accordion__childs {
+.item-accordion__list {
+  padding-left: 1rem;
+  margin: 0;
+  overflow: hidden;
+  transition: height 0.5s ease;
+}
+
+.item-accordion__item {
+  margin: 0.5rem 0;
+}
+.is-active {
+}
+
+.item-accordion__item {
   list-style: none;
 }
