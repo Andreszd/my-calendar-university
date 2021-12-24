@@ -1,5 +1,5 @@
 import HeaderSubjects from '../../molecules/HeaderSubjects';
-import ItemAccordion from '../../atoms/ItemAccordion';
+import ItemAccordion from '../../molecules/ItemAccordion';
 import Input from '../../atoms/Input';
 
 import './SubjectsOfCareer.css';
