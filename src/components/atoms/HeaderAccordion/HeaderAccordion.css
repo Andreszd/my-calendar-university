@@ -1,0 +1,40 @@
+.accordion__header {
+    position: relative;
+    border-bottom: 1px solid var(--gray-10);
+    user-select: none;
+}
+.accordion__header:hover.accordion__header::after,
+.accordion__header:hover.accordion__header::before,
+.accordion__header.is-active.accordion__header::before,
+.accordion__header.is-active.accordion__header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 25px;
+    margin: auto;
+    bottom: 0;
+    width: 1px;
+    height: 12px;
+    background-color: var(--black-10);
+    transition: transform ease 0.3s;
+}
+.accordion__header::after {
+    transform: rotate(90deg);
+}
+.accordion__header::before {
+    transform: rotate(180deg);
+}
+.is-active.accordion__header::after {
+    transform: rotate(45deg);
+}
+.is-active.accordion__header::before {
+    transform: rotate(135deg);
+}
+.accordion__header:hover,
+.accordion__header.is-active {
+    background-color: var(--white-20);
+}
+.accordion__text {
+    margin: 0;
+    padding: 0.5rem 0;
+}

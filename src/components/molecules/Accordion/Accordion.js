@@ -1,5 +1,5 @@
 import { useState } from "react";
-import HeaderItemAccordion from "../../atoms/HeaderItemAccordion";
+import HeaderAccordion from "../../atoms/HeaderAccordion";
 import Input from "../../atoms/Input";
 
 import "./Accordion.css";
@@ -10,16 +10,14 @@ export default function ItemAccordion({ children }) {
     //Question: is necesary to have a atom that only contains a html tag ??
     return (
         <>
-            <div className="item-accordion">
-                <HeaderItemAccordion
+            <div className="accordion">
+                <HeaderAccordion
                     isActive={isActive}
                     onClick={() => setActive(!isActive)}
                 >
                     Quimica
-                </HeaderItemAccordion>
-                {isActive && (
-                    <ul className="item-accordion__list">{children}</ul>
-                )}
+                </HeaderAccordion>
+                {isActive && <ul className="accordion__list">{children}</ul>}
             </div>
         </>
     );
