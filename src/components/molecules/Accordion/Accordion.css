@@ -5,12 +5,7 @@
     transition: height 0.5s ease;
 }
 
-.accordion__item {
+.accordion__list .accordion__item {
     margin: 0.5rem 0;
-}
-.is-active {
-}
-
-.accordion__item {
     list-style: none;
 }
