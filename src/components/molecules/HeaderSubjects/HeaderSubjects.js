@@ -13,7 +13,7 @@ const HeaderSubjects = ({ isShowing, setShow }) => {
   return (
     <div
       className="l-flex-space-between header-subjects"
-      onClick={() => setShow(!isShowing)}>
+      onClick={() => setShow()}>
       <Heading type="h2" textTransform="uppercase" size="md">
         Subjects of Carreer
       </Heading>

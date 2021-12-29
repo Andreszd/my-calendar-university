@@ -1,19 +1,22 @@
-import SubjectsOfCarrer from "../SubjectsOfCarreer";
-import UserProfile from "../../molecules/UserProfile/UserProfile";
+import SubjectsOfCarrer from '../SubjectsOfCarreer';
+import UserProfile from '../../molecules/UserProfile/UserProfile';
+import TransitionComponent from '../../../hoc/TransitionComponent';
 
-import useHandlerSubjects from "../../../hooks/useHandlerSubjects";
+import useHandlerActive from '../../../hooks/useHandlerActive';
 
-import "./Sidebar.css";
+import './Sidebar.css';
 
 const SidebarUser = () => {
-    const { isShowing, setShow } = useHandlerSubjects(false);
+  const { isShowing, switchShow } = useHandlerActive(false);
 
-    return (
-        <div className="sidebar">
-            {isShowing && <UserProfile />}
-            <SubjectsOfCarrer isShowing={isShowing} setShow={setShow} />
-        </div>
-    );
+  return (
+    <div className="sidebar">
+      <TransitionComponent isMounted={isShowing}>
+        <UserProfile />
+      </TransitionComponent>
+      <SubjectsOfCarrer isShowing={isShowing} setShow={switchShow} />
+    </div>
+  );
 };
 
 export default SidebarUser;

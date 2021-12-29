@@ -1,0 +1,8 @@
+.wrapper-animation {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height linear 0.3s;
+}
+.is-mounted {
+  max-height: 200px;
+}
