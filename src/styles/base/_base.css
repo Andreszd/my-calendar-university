@@ -1,20 +1,23 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *::after,
 *::before {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    font-size: 15px;
+  margin: 0;
+  font-size: 15px;
+}
+:root {
+  --base-time-transition: 0.3s;
 }
 body,
 button,
 input,
 textarea {
-    font-family: "Jost", sans-serif;
+  font-family: 'Jost', sans-serif;
 }

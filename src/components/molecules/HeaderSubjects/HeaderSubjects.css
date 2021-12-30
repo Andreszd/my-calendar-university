@@ -6,7 +6,7 @@
 .header-subjects__icon {
   color: var(--blue-10);
   transform: rotate(180deg);
-  transition: transform ease 0.2s;
+  transition: transform ease var(--base-time-transition);
 }
 .isActive {
   transform: rotate(0deg);
