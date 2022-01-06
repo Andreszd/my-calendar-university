@@ -1,37 +1,41 @@
-import PropTypes from "prop-types";
-import classNames from "classnames";
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-import "./Input.css";
+import './Input.css';
 
 export default function Input({
-    type,
-    placeholder,
-    defaultOption,
-    hasFullWidth,
+  type,
+  placeholder,
+  defaultOption,
+  hasFullWidth,
+  options,
 }) {
-    if (type === "select")
-        return (
-            <select
-                className={classNames("input input-select", {
-                    "full-width": hasFullWidth,
-                })}
-            >
-                <option disabled selected>
-                    {defaultOption}
-                </option>
-                <option>hello</option>
-            </select>
-        );
-    return <input className="input" placeholder={placeholder} type={type} />;
+  if (type === 'select')
+    return (
+      <select
+        defaultValue="default"
+        className={classNames('input input-select', {
+          'full-width': hasFullWidth,
+        })}>
+        <option disabled value="default">
+          {defaultOption}
+        </option>
+        {options?.map((opt) => (
+          <option value={opt}>{opt}</option>
+        ))}
+      </select>
+    );
+  return <input className="input" placeholder={placeholder} type={type} />;
 }
 //TODO add more types of inputs
 Input.propTypes = {
-    type: PropTypes.oneOf(["text", "select", "checkbox"]),
-    placeholder: PropTypes.string,
-    defaultOption: PropTypes.string,
-    hasFullWidth: PropTypes.bool,
+  type: PropTypes.oneOf(['text', 'select', 'checkbox']),
+  placeholder: PropTypes.string,
+  defaultOption: PropTypes.string,
+  hasFullWidth: PropTypes.bool,
+  options: PropTypes.array,
 };
 
 Input.defaultProps = {
-    hasFullWidth: false,
+  hasFullWidth: false,
 };
