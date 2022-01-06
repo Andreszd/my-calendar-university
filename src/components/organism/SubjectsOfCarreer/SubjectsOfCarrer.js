@@ -1,26 +1,35 @@
-import HeaderSubjects from "../../molecules/HeaderSubjects";
-import Accordion from "../../molecules/Accordion";
-import ItemAccordion from "../../atoms/ItemAccordion";
-import Checkbox from "../../atoms/Checkbox/Checkbox";
-import Input from "../../atoms/Input";
+import HeaderSubjects from '../../molecules/HeaderSubjects';
+import AccordionSubject from '../AccordionSubject';
+import Input from '../../atoms/Input';
 
-import "./SubjectsOfCareer.css";
+import useCareer from '../../../hooks/useCareer';
+
+import './SubjectsOfCareer.css';
 
 export default function SubjectsOfCarrer({ isShowing, setShow }) {
-    return (
-        <>
-            <HeaderSubjects isShowing={isShowing} setShow={setShow} />
-            <Input type="select" defaultOption="Levels" hasFullWidth={true} />
-            <div className="subjects__content">
-                <Accordion>
-                    <ItemAccordion>
-                        <Checkbox text="Docente A" />
-                    </ItemAccordion>
-                    <ItemAccordion>
-                        <Checkbox text="Docente A" />
-                    </ItemAccordion>
-                </Accordion>
-            </div>
-        </>
-    );
+  const { semesters, semester, getSemesterByLevel } = useCareer();
+
+  const onChange = (evt) => getSemesterByLevel(evt.target.value);
+
+  return (
+    <>
+      <HeaderSubjects isShowing={isShowing} setShow={setShow} />
+      <Input
+        type="select"
+        defaultOption="Levels"
+        onChange={onChange}
+        hasFullWidth={true}>
+        {semesters.map(({ code, name }, idx) => (
+          <option key={idx} value={code}>
+            {name}
+          </option>
+        ))}
+      </Input>
+      <div className="subjects__content">
+        {semester?.subjects?.map((subject) => (
+          <AccordionSubject subject={subject} key={subject.code} />
+        ))}
+      </div>
+    </>
+  );
 }

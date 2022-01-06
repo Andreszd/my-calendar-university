@@ -1,2 +1,2 @@
 export const baseUrl =
-    "http://2021.cappuchino.scesi.umss.edu.bo/data/FCyT/2021-01";
+  'https://safe-ocean-97444.herokuapp.com/departments/fcyt';

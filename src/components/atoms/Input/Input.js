@@ -8,21 +8,21 @@ export default function Input({
   placeholder,
   defaultOption,
   hasFullWidth,
-  options,
+  onChange,
+  children,
 }) {
   if (type === 'select')
     return (
       <select
         defaultValue="default"
+        onChange={onChange}
         className={classNames('input input-select', {
           'full-width': hasFullWidth,
         })}>
         <option disabled value="default">
           {defaultOption}
         </option>
-        {options?.map((opt) => (
-          <option value={opt}>{opt}</option>
-        ))}
+        {children}
       </select>
     );
   return <input className="input" placeholder={placeholder} type={type} />;
@@ -33,7 +33,7 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   defaultOption: PropTypes.string,
   hasFullWidth: PropTypes.bool,
-  options: PropTypes.array,
+  onChange: PropTypes.func,
 };
 
 Input.defaultProps = {

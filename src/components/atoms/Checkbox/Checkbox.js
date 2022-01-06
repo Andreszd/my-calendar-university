@@ -1,13 +1,13 @@
-import "./Checkbox.css";
+import './Checkbox.css';
 
-export default function Checkbox({ text }) {
-    //TODO handler many checkbox
-    return (
-        <div className="checkbox">
-            <input id="chbx" type="checkbox" className="checkbox__input" />
-            <label className="checkbox__label" htmlFor="chbx">
-                {text}
-            </label>
-        </div>
-    );
+export default function Checkbox({ text, id }) {
+  //TODO handler many checkbox
+  return (
+    <div className="checkbox">
+      <input id={id} type="checkbox" className="checkbox__input" />
+      <label className="checkbox__label" htmlFor={id}>
+        {text}
+      </label>
+    </div>
+  );
 }
