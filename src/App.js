@@ -1,18 +1,22 @@
-import SidebarUser from "./components/organism/SidebarUser";
-import GridLayout from "./components/layout/GridLayout/index";
+import SidebarUser from './components/organism/SidebarUser';
+import GridLayout from './components/layout/GridLayout/index';
+import HeaderUser from './components/organism/HeaderUser';
+import UserCalendar from './components/organism/UserCalendar/UserCalendar';
 
-import "./styles/index.css";
-import HeaderUser from "./components/organism/HeaderUser";
-import UserCalendar from "./components/organism/UserCalendar/UserCalendar";
+import { CalendarProvider } from './provider/calendarProvider';
+
+import './styles/index.css';
 
 function App() {
-    return (
-        <GridLayout>
-            <HeaderUser />
-            <SidebarUser />
-            <UserCalendar />
-        </GridLayout>
-    );
+  return (
+    <GridLayout>
+      <HeaderUser />
+      <CalendarProvider>
+        <SidebarUser />
+        <UserCalendar />
+      </CalendarProvider>
+    </GridLayout>
+  );
 }
 
 export default App;
