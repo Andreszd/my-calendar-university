@@ -1,8 +1,8 @@
-import Container from "components/layout/Container";
-import HeaderUserCalendar from "pages/feature/Calendar/HeaderUserCalendar";
-import WeekCalendar from "pages/feature/Calendar/WeekCalendar";
+import Container from 'components/layout/Container';
+import HeaderUserCalendar from 'pages/features/Calendar/HeaderUserCalendar';
+import WeekCalendar from 'pages/features/Calendar/WeekCalendar';
 
-import "./UserCalendar.css";
+import './UserCalendar.css';
 const UserCalendar = () => (
   <div className="user-calendar">
     <Container>

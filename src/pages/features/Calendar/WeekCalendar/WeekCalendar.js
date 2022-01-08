@@ -1,12 +1,12 @@
-import HeaderCalendar from "../HeaderCalendar/HeaderCalendar";
-import HoursCalendar from "../HoursCalendar/HoursCalendar";
-import CardCalendar from "../CardCalendar";
-import GridCalendar from "components/layout/GridCalendar";
+import HeaderCalendar from '../HeaderCalendar';
+import HoursCalendar from '../HoursCalendar';
+import CardCalendar from '../CardCalendar';
+import GridCalendar from 'components/layout/GridCalendar';
 
-import { calendarKeys, calendarValues } from "./constants";
-import { parseToString } from "libs/toString";
+import { calendarKeys, calendarValues } from './constants';
+import { parseToString } from 'libs/toString';
 
-import "./WeekCalendar.css";
+import './WeekCalendar.css';
 //TODO: Refactor in how rendered all cards
 const WeekCalendar = () => {
   return (
