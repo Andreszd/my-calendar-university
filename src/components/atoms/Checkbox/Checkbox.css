@@ -1,29 +1,7 @@
 .checkbox {
-    display: inline-block;
-    position: relative;
-    user-select: none;
-    margin: 0.5rem 0;
-    padding-right: 2rem;
-}
-.checkbox__label::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    width: 14px;
-    height: 14px;
-    border: 1px solid var(--gray-20);
-    border-radius: 2px;
-}
-
-.checkbox__input {
-    visibility: hidden;
-    margin: 0;
-}
-
-.checkbox__input:checked + .checkbox__label::after {
-    background-color: var(--blue-10);
-    border-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--size-font-normal);
+  user-select: none;
+  padding-right: 2rem;
 }
