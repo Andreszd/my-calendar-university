@@ -1,10 +1,10 @@
-import HeaderSubjects from '../../molecules/HeaderSubjects';
-import AccordionSubject from '../AccordionSubject';
-import Input from '../../atoms/Input';
+import HeaderSubjects from "components/molecules/HeaderSubjects";
+import AccordionSubject from "../AccordionSubject";
+import Input from "components/atoms/Input";
 
-import useCareer from '../../../hooks/useCareer';
+import useCareer from "hooks/useCareer";
 
-import './SubjectsOfCareer.css';
+import "./SubjectsOfCareer.css";
 
 export default function SubjectsOfCarrer({ isShowing, setShow }) {
   const { semesters, semester, getSemesterByLevel } = useCareer();
@@ -18,7 +18,8 @@ export default function SubjectsOfCarrer({ isShowing, setShow }) {
         type="select"
         defaultOption="Levels"
         onChange={onChange}
-        hasFullWidth={true}>
+        hasFullWidth={true}
+      >
         {semesters.map(({ code, name }, idx) => (
           <option key={idx} value={code}>
             {name}

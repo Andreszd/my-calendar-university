@@ -1,8 +1,8 @@
-import Accordion from '../../molecules/Accordion';
-import ItemAccordion from '../../atoms/ItemAccordion';
-import Checkbox from '../../atoms/Checkbox/Checkbox';
+import Accordion from "components/molecules/Accordion";
+import ItemAccordion from "components/atoms/ItemAccordion";
+import Checkbox from "components/atoms/Checkbox/Checkbox";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 export default function AccordionAssignature({ subject }) {
   return (

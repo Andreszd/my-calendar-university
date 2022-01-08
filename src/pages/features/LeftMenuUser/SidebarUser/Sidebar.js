@@ -1,10 +1,10 @@
-import SubjectsOfCarrer from '../SubjectsOfCarreer';
-import UserProfile from '../../molecules/UserProfile/UserProfile';
-import TransitionComponent from '../../../hoc/TransitionComponent';
+import SubjectsOfCarrer from "../SubjectsOfCarreer";
+import UserProfile from "components/molecules/UserProfile";
+import TransitionComponent from "hoc/TransitionComponent";
 
-import useHandlerActive from '../../../hooks/useHandlerActive';
+import useHandlerActive from "hooks/useHandlerActive";
 
-import './Sidebar.css';
+import "./Sidebar.css";
 
 const SidebarUser = () => {
   const { isShowing, switchShow } = useHandlerActive(false);
