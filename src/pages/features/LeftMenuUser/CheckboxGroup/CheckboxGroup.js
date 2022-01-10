@@ -10,6 +10,7 @@ export default function CheckboxGroup({ group, code, subject }) {
   const handlerOnChange = (evt) =>
     evt.target.checked &&
     addAssignature({
+      nameSubject: subject.name,
       schedule: group.schedule,
       subjectCode: subject.code,
       groupCode: group.code,

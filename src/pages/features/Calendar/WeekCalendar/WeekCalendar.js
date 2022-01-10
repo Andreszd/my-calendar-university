@@ -21,6 +21,8 @@ const WeekCalendar = () => {
               key={`${calendarKeys[idxCol]}-${segmentHour.start}:${segmentHour.end}`}
               row={parseToString(idxRow + 2)}
               col={parseToString(idxCol + 2)}
+              day={idxCol + 1}
+              hourRange={segmentHour}
             >
               {segmentHour.start} - {segmentHour.end}
             </CardCalendar>
