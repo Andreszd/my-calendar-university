@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { CalendarContext } from 'provider/calendarProvider';
+import classNames from 'classnames';
 
 import './CardCalendar.css';
 
@@ -12,7 +13,9 @@ const CardCalendar = ({ children, row, col, hourRange, day }) => {
   const { selectedAssignatures } = useContext(CalendarContext);
 
   useEffect(() => {
-    isRange();
+    const period = isRange();
+    if (!period && selectedPeriod) setSelectedPeriod(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedAssignatures]);
 
   const isRange = () => {
@@ -35,7 +38,7 @@ const CardCalendar = ({ children, row, col, hourRange, day }) => {
   };
 
   const shouldDisabled = () => {
-    return selectedPeriod && selectedPeriod?.start !== hourRange.start;
+    return selectedPeriod && selectedPeriod.start !== hourRange.start;
   };
 
   const calculateRow = () => {
@@ -43,16 +46,17 @@ const CardCalendar = ({ children, row, col, hourRange, day }) => {
     const range = mapRow(row);
     const rowStart = range.split('/')[0];
     const rowEnd = parseInt(range.split('/')[1]);
-    return `${rowStart}/${rowEnd + (selectedPeriod.duration - 1)}`;
+    return `${rowStart}/${rowEnd + (selectedPeriod?.duration - 1)}`;
   };
 
   return (
     <div
-      className="card-calendar"
+      className={classNames('card-calendar', {
+        'is-active': !shouldDisabled(),
+      })}
       style={{
         gridRow: calculateRow(),
         gridColumn: mapColums(col),
-        display: shouldDisabled() ? 'none' : 'visible',
       }}
     >
       {selectedPeriod?.nameSubject}
