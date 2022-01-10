@@ -23,9 +23,7 @@ const WeekCalendar = () => {
               col={parseToString(idxCol + 2)}
               day={idxCol + 1}
               hourRange={segmentHour}
-            >
-              {segmentHour.start} - {segmentHour.end}
-            </CardCalendar>
+            ></CardCalendar>
           ));
         })}
       </GridCalendar>
