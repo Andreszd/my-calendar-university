@@ -8,7 +8,7 @@ import { mapRow, mapColums, colums, rows, days } from './constants';
 
 import PropTypes from 'prop-types';
 
-const CardCalendar = ({ children, row, col, hourRange, day }) => {
+const CardCalendar = ({ children, row, col, hourRange, day, className }) => {
   const [selectedPeriod, setSelectedPeriod] = useState(null);
   const { selectedAssignatures } = useContext(CalendarContext);
 
@@ -19,10 +19,12 @@ const CardCalendar = ({ children, row, col, hourRange, day }) => {
   }, [selectedAssignatures]);
 
   const isRange = () => {
+    //TODO refactor code
+    // rename component
     let finded = null;
     selectedAssignatures?.forEach((assignatures) => {
       if (!finded) {
-        const { schedule, nameSubject } = assignatures;
+        const { schedule, nameSubject, className } = assignatures;
         finded = schedule.find(
           (period) =>
             days[period.day] === day &&
@@ -30,7 +32,7 @@ const CardCalendar = ({ children, row, col, hourRange, day }) => {
             parseInt(hourRange.end) <= parseInt(period.end)
         );
         if (finded && !selectedPeriod) {
-          setSelectedPeriod({ ...finded, nameSubject });
+          setSelectedPeriod({ ...finded, nameSubject, className });
         }
       }
     });
@@ -51,14 +53,14 @@ const CardCalendar = ({ children, row, col, hourRange, day }) => {
 
   return (
     <div
-      className={classNames('card-calendar', {
-        'is-active': !shouldDisabled(),
+      className={classNames(`card-calendar ${className}`, {
+        'not-show': shouldDisabled(),
+        [`card-calendar--${selectedPeriod?.className}`]: selectedPeriod,
       })}
       style={{
         gridRow: calculateRow(),
         gridColumn: mapColums(col),
-      }}
-    >
+      }}>
       {selectedPeriod?.nameSubject}
       {children}
     </div>
@@ -68,5 +70,10 @@ CardCalendar.propTypes = {
   children: PropTypes.node,
   row: PropTypes.oneOf(Object.keys(rows)),
   col: PropTypes.oneOf(Object.keys(colums)),
+  className: PropTypes.string,
 };
+CardCalendar.defaultProps = {
+  className: '',
+};
+
 export default CardCalendar;
