@@ -1,5 +1,7 @@
 .card-calendar {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 1rem 0;
   border-top: 1px solid var(--gray-10);
   border-left: 1px solid var(--gray-10);
@@ -13,4 +15,87 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.card-calendar.not-show {
+  display: none;
+}
+
+.card-calendar--color-1 {
+  background-color: #f5eafd;
+  border-left: 3px solid #b86df7;
+  color: #b86df7;
+}
+.card-calendar--color-2 {
+  background-color: #fee9ec;
+  border-left: 3px solid #ff647a;
+  color: #b86df7;
+}
+.card-calendar--color-3 {
+  background-color: #fef6e8;
+  border-left: 3px solid #ffc263;
+  color: #ffc263;
+}
+.card-calendar--color-4 {
+  background-color: #eeeffd;
+  border-left: 3px solid #43538c;
+  color: #43538c;
+}
+.card-calendar--color-5 {
+  background-color: #e8f5e9;
+  border-left: 3px solid #56ccf2;
+  color: #56ccf2;
+}
+.card-calendar--color-6 {
+  background-color: #eceff1;
+  border-left: 3px solid var(--blue-10);
+  color: var(--blue-10);
+}
+.card-calendar--color-7 {
+  background-color: #fff3e0;
+  border-left: 3px solid #ffc263;
+  color: #ffc263;
+}
+.card-calendar--color-8 {
+  background-color: #e0f7fa;
+}
+
+.card-calendar--color-1,
+.card-calendar--color-2,
+.card-calendar--color-3,
+.card-calendar--color-4,
+.card-calendar--color-5,
+.card-calendar--color-6,
+.card-calendar--color-7,
+.card-calendar--color-8 {
+  transition: transform linear 0.2s;
+  font-weight: bold;
+}
+.card-calendar--color-1:hover {
+}
+.card-calendar--color-2:hover {
+}
+.card-calendar--color-3:hover {
+}
+.card-calendar--color-4:hover {
+}
+.card-calendar--color-5:hover {
+}
+.card-calendar--color-6:hover {
+}
+.card-calendar--color-7:hover {
+}
+.card-calendar--color-8:hover {
+}
+.card-calendar--color-1:hover,
+.card-calendar--color-2:hover,
+.card-calendar--color-3:hover,
+.card-calendar--color-4:hover,
+.card-calendar--color-5:hover,
+.card-calendar--color-6:hover,
+.card-calendar--color-7:hover,
+.card-calendar--color-8:hover {
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  transform: scale(1.1);
 }
