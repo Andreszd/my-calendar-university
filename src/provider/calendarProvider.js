@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 
+import { getClassColor } from 'libs/colors';
+
 export const CalendarContext = React.createContext();
 
 export function CalendarProvider({ children }) {
   const [selectedAssignatures, setSelectedAssignatures] = useState([]);
 
   const addAssignature = (assignature) => {
-    setSelectedAssignatures([...selectedAssignatures, assignature]);
+    const assg = addColor(assignature);
+    setSelectedAssignatures([...selectedAssignatures, assg]);
+  };
+
+  //TODO to try change responsabilities
+  const addColor = (assignature) => {
+    return { ...assignature, className: getClassColor() };
   };
 
   const deleteAssignature = ({ subjectCode, groupCode }) => {
@@ -22,8 +30,7 @@ export function CalendarProvider({ children }) {
 
   return (
     <CalendarContext.Provider
-      value={{ selectedAssignatures, addAssignature, deleteAssignature }}
-    >
+      value={{ selectedAssignatures, addAssignature, deleteAssignature }}>
       {children}
     </CalendarContext.Provider>
   );
