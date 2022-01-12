@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { getClassColor } from 'libs/colors';
+import { getClassColor, enableColor } from 'libs/colors';
 
 export const CalendarContext = React.createContext();
 
@@ -17,20 +17,26 @@ export function CalendarProvider({ children }) {
     return { ...assignature, className: getClassColor() };
   };
 
-  const deleteAssignature = ({ subjectCode, groupCode }) => {
-    const res = selectedAssignatures.filter(
-      (assignature) =>
-        !(
-          assignature.subjectCode === subjectCode &&
-          assignature.groupCode === groupCode
-        )
-    );
-    setSelectedAssignatures(res);
+  const removeAssignature = ({ subjectCode, groupCode }) => {
+    const stack = [];
+    let toRemove = null;
+    selectedAssignatures.forEach((assignature) => {
+      if (
+        assignature.subjectCode === subjectCode &&
+        assignature.groupCode === groupCode
+      ) {
+        toRemove = assignature;
+      } else {
+        stack.push(assignature);
+      }
+    });
+    enableColor(toRemove?.className);
+    setSelectedAssignatures(stack);
   };
 
   return (
     <CalendarContext.Provider
-      value={{ selectedAssignatures, addAssignature, deleteAssignature }}>
+      value={{ selectedAssignatures, addAssignature, removeAssignature }}>
       {children}
     </CalendarContext.Provider>
   );
