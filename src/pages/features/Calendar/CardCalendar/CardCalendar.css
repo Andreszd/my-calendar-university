@@ -26,27 +26,27 @@
   color: #b86df7;
 }
 .card-calendar--color-2 {
-  background-color: #fee9ec;
-  border-left: 3px solid #ff647a;
-  color: #b86df7;
+  background-color: var(--violet-10);
+  border-left: 3px solid var(--violet-20);
+  color: var(--violet-20);
 }
 .card-calendar--color-3 {
-  background-color: #fef6e8;
-  border-left: 3px solid #ffc263;
-  color: #ffc263;
+  background-color: var(--yellow-10);
+  border-left: 3px solid var(--yellow-20);
+  color: var(--yellow-20);
 }
 .card-calendar--color-4 {
-  background-color: #eeeffd;
-  border-left: 3px solid #43538c;
-  color: #43538c;
+  background-color: var(--blue-base-10);
+  border-left: 3px solid var(--blue-20);
+  color: var(--blue-20);
 }
 .card-calendar--color-5 {
-  background-color: #e8f5e9;
-  border-left: 3px solid #56ccf2;
-  color: #56ccf2;
+  background-color: var(--cyan-10);
+  border-left: 3px solid var(--cyan-20);
+  color: var(--cyan-20);
 }
 .card-calendar--color-6 {
-  background-color: #eceff1;
+  background-color: var(--blue-base-20);
   border-left: 3px solid var(--blue-10);
   color: var(--blue-10);
 }
@@ -73,16 +73,28 @@
 .card-calendar--color-1:hover {
 }
 .card-calendar--color-2:hover {
+  background-color: var(--violet-20);
+  color: var(--white-10);
 }
 .card-calendar--color-3:hover {
+  background-color: var(--yellow-20);
+  color: var(--white-10);
 }
 .card-calendar--color-4:hover {
+  background-color: var(--blue-20);
+  color: var(--white-10);
 }
 .card-calendar--color-5:hover {
+  background-color: var(--cyan-20);
+  color: var(--white-10);
 }
 .card-calendar--color-6:hover {
+  background-color: var(--blue-10);
+  color: var(--white-10);
 }
 .card-calendar--color-7:hover {
+  background-color: var(--violet-20);
+  color: var(--white-10);
 }
 .card-calendar--color-8:hover {
 }
