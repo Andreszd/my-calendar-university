@@ -41,7 +41,7 @@ const colors = [
   },
 ];
 
-const getClassColor = () => {
+const getRandomClassColor = () => {
   let idx = 0;
   let className = null;
   //FIXME refactor
@@ -51,7 +51,6 @@ const getClassColor = () => {
     idx = getRandomNumber(0, colors.length - 1);
     if (colors[idx] && !colors[idx].isUsed) {
       colors[idx].isUsed = true;
-      console.log(colors[idx]);
       return colors[idx].className;
     }
   }
@@ -70,4 +69,4 @@ const getRandomNumber = (max, min) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-export { getClassColor, enableColor };
+export { getRandomClassColor, enableColor };

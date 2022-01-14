@@ -5,17 +5,16 @@ import PropTypes from 'prop-types';
 import { CalendarContext } from 'provider/calendarProvider';
 
 export default function CheckboxGroup({ group, code, subject }) {
-  const { addAssignature, removeAssignature } = useContext(CalendarContext);
-
+  const { addSubject, removeSubject } = useContext(CalendarContext);
   const handlerOnChange = (evt) =>
     evt.target.checked
-      ? addAssignature({
-          nameSubject: subject.name,
+      ? addSubject({
+          subjectName: subject.name,
           schedule: group.schedule,
           subjectCode: subject.code,
           groupCode: group.code,
         })
-      : removeAssignature({ subjectCode: subject.code, groupCode: group.code });
+      : removeSubject({ subjectCode: subject.code, groupCode: group.code });
 
   return <Checkbox text={group.teacher} id={code} onChange={handlerOnChange} />;
 }
