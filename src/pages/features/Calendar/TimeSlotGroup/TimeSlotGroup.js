@@ -60,9 +60,25 @@ export default function TimeSlotGroup({ row, col, hourRange, day, className }) {
         row={calculateRow()}
         col={mapColums(col)}
         day={day}
+        className="time-slot-group"
         isDisabled={shouldDisabled()}
         modifier={colorClass}>
-        {subjectPeriod?.subjectName || subjectPeriod?.subjectNames}
+        {subjectPeriod?.subjectName && (
+          <>
+            <span>{subjectPeriod.subjectName}</span>
+            <span>
+              {subjectPeriod.room} G:{subjectPeriod?.groupCode}
+            </span>
+          </>
+        )}
+        {subjectPeriod?.subjectNames && (
+          <>
+            <span>{subjectPeriod.subjectNames[0]}</span>
+            <span>G:{subjectPeriod?.groupCodes[0]}</span>
+            <span>{subjectPeriod.subjectNames[1]}</span>
+            <span>G:{subjectPeriod?.groupCodes[1]}</span>
+          </>
+        )}
       </CardCalendar>
     </>
   );

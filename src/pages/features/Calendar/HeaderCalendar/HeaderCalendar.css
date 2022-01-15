@@ -1,4 +1,6 @@
 .header-calendar {
-  color: var(--gray-30);
+  color: var(--gray-40);
   font-weight: bold;
+  padding: 0.7rem 0;
+  font-size: var(--size-font-small);
 }

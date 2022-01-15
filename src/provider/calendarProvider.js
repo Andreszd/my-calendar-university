@@ -91,7 +91,7 @@ export function CalendarProvider({ children }) {
       array.push({ ...newPeriod, end: periodOne.end, start: periodTwo.end });
     }
   };
-
+  /*
   const collisionCases = (subjectRespect, { subject, scheduleDay }) => {
     const { classPeriod } = subjectRespect;
     const { subjectName, subjectCode, groupCode } = subject;
@@ -119,7 +119,7 @@ export function CalendarProvider({ children }) {
       scheduleDay.collision = { subjectName };
     }
   };
-
+  */
   const removeSubject = ({ subjectCode, groupCode }) => {
     removeClassColor({ subjectCode, groupCode });
     removeCollisions({ subjectCode, groupCode });

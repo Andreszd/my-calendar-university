@@ -27,10 +27,12 @@
   --blue-10: #4d76fd;
   --blue-20: #43538c;
   --black-10: #1b1f31;
-  --violet-10: #fee9ec;
-  --violet-20: #ff647a;
+  --violet-10: #f5eafd;
+  --violet-20: #b86df7;
   --cyan-10: #e8f5e9;
   --cyan-20: #56ccf2;
   --yellow-10: #fff3e0;
   --yellow-20: #ffc263;
+  --red-10: rgba(238, 66, 66, 0.15);
+  --red-20: rgba(238, 66, 66, 1);
 }

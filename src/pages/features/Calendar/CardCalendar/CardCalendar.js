@@ -2,7 +2,7 @@ import classNames from 'classnames';
 
 import './CardCalendar.css';
 
-import { colums, rows } from 'pages/features/Calendar/constants';
+import { colums } from 'pages/features/Calendar/constants';
 
 import PropTypes from 'prop-types';
 

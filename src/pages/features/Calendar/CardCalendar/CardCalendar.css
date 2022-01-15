@@ -2,10 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;
   border-top: 1px solid var(--gray-10);
   border-left: 1px solid var(--gray-10);
   text-align: center;
+  user-select: none;
 }
 
 .card-calendar:nth-of-type(1) {
@@ -13,6 +13,12 @@
 }
 .card-calendar.not-show {
   display: none;
+}
+.card-calendar.time-slot-group {
+  padding: 1rem 0;
+  flex-direction: column;
+  font-size: var(--size-font-small);
+  font-weight: 500;
 }
 
 .card-calendar--color-1 {
@@ -54,6 +60,12 @@
   background-color: #e0f7fa;
 }
 
+.card-calendar.card-calendar--collision {
+  background-color: var(--red-10);
+  color: var(--red-20);
+  font-size: var(--size-font-very-small);
+}
+
 .card-calendar--color-1,
 .card-calendar--color-2,
 .card-calendar--color-3,
@@ -63,7 +75,6 @@
 .card-calendar--color-7,
 .card-calendar--color-8 {
   transition: transform linear 0.2s;
-  font-weight: bold;
 }
 .card-calendar--color-1:hover {
 }
@@ -88,7 +99,7 @@
   color: var(--white-10);
 }
 .card-calendar--color-7:hover {
-  background-color: var(--violet-20);
+  background-color: var(--yellow-20);
   color: var(--white-10);
 }
 .card-calendar--color-8:hover {
@@ -104,5 +115,5 @@
   border-top: none;
   border-right: none;
   border-bottom: none;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }

@@ -4,6 +4,8 @@ import { mapRow, mapColums } from 'pages/features/Calendar/constants';
 
 import { parseToString } from 'libs/toString';
 
+import './HoursCalendar.css';
+
 const hours = [
   '06:45',
   '07:30',
@@ -31,6 +33,7 @@ const HoursCalendar = () => (
   <>
     {hours.map((element, idx) => (
       <CardCalendar
+        className="hours-calendar"
         key={idx}
         row={mapRow(parseToString(idx + 2))}
         col={mapColums(parseToString(1))}>
