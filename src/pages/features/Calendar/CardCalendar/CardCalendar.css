@@ -11,11 +11,6 @@
 .card-calendar:nth-of-type(1) {
   border-top-left-radius: 1rem;
 }
-.card-calendar.is-active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .card-calendar.not-show {
   display: none;
 }

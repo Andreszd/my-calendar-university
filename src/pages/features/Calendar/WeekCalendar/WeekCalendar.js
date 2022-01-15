@@ -1,6 +1,6 @@
 import HeaderCalendar from '../HeaderCalendar';
 import HoursCalendar from '../HoursCalendar';
-import CardCalendar from '../CardCalendar';
+import TimeSlotGroup from '../TimeSlotGroup';
 import GridCalendar from 'components/layout/GridCalendar';
 
 import { calendarKeys, calendarValues } from './constants';
@@ -17,13 +17,13 @@ const WeekCalendar = () => {
         {calendarValues.map((day, idxCol) => {
           const { periodsDay } = day;
           return periodsDay.map((segmentHour, idxRow) => (
-            <CardCalendar
+            <TimeSlotGroup
               key={`${calendarKeys[idxCol]}-${segmentHour.start}:${segmentHour.end}`}
               row={parseToString(idxRow + 2)}
               col={parseToString(idxCol + 2)}
               day={idxCol + 1}
               hourRange={segmentHour}
-            ></CardCalendar>
+            />
           ));
         })}
       </GridCalendar>
