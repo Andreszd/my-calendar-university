@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import './Checkbox.css';
 
-export default function Checkbox({ text, id, onChange }) {
+export default function Checkbox({ text, id, onChange, isChecked }) {
   //TODO handler many checkbox
   return (
     <div className="checkbox">
@@ -12,6 +12,7 @@ export default function Checkbox({ text, id, onChange }) {
       <input
         id={id}
         type="checkbox"
+        checked={isChecked}
         className="checkbox__input"
         onChange={onChange}
       />
@@ -22,5 +23,6 @@ export default function Checkbox({ text, id, onChange }) {
 Checkbox.propTypes = {
   text: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  isChecked: PropTypes.bool,
   onChange: PropTypes.func,
 };
