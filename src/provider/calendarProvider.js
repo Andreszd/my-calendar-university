@@ -5,9 +5,9 @@ import { getRandomClassColor, enableColor } from 'libs/colors';
 export const CalendarContext = React.createContext();
 
 export function CalendarProvider({ children }) {
-  const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [collisions, setCollisions] = useState([]);
-  const [colorsPeriod, setColorsPeriod] = useState([]);
+  const [groupSubjects, setGroupSubjects] = useState([]);
+  const [subjectGroupPeriods, setSubjectGroupPeriods] = useState([]);
 
   const addSubject = (subject) => {
     const newSubject = copyAllSubject(subject);
@@ -23,12 +23,12 @@ export function CalendarProvider({ children }) {
 
     addClassToPeriodSubject(newSubject);
     checkPeriodsCollision(periodsOfSubject);
-    setSelectedSubjects([...selectedSubjects, ...periodsOfSubject]);
+    setSubjectGroupPeriods([...subjectGroupPeriods, ...periodsOfSubject]);
   };
 
   const addClassToPeriodSubject = (subject) => {
-    setColorsPeriod([
-      ...colorsPeriod,
+    setGroupSubjects([
+      ...groupSubjects,
       {
         subjectCode: subject?.subjectCode,
         groupCode: subject?.groupCode,
@@ -43,7 +43,7 @@ export function CalendarProvider({ children }) {
 
   const checkPeriodsCollision = (periodsOfSubject) => {
     const collisionsPeriod = [];
-    selectedSubjects.forEach((period) => {
+    subjectGroupPeriods.forEach((period) => {
       const periodWithcollision = periodsOfSubject.find(
         (periodOfSubject) =>
           period.day === periodOfSubject.day &&
@@ -123,24 +123,24 @@ export function CalendarProvider({ children }) {
   const removeSubject = ({ subjectCode, groupCode }) => {
     removeClassColor({ subjectCode, groupCode });
     removeCollisions({ subjectCode, groupCode });
-    const periods = selectedSubjects.filter(
+    const periods = subjectGroupPeriods.filter(
       (period) =>
         !(period.subjectCode === subjectCode && period.groupCode === groupCode)
     );
-    setSelectedSubjects(periods);
+    setSubjectGroupPeriods(periods);
   };
 
-  const getColorPeriodById = (period) => {
-    return colorsPeriod.find(
+  const getSubjectById = (period) => {
+    return groupSubjects.find(
       ({ subjectCode, groupCode }) =>
         subjectCode === period?.subjectCode && groupCode === period?.groupCode
     );
   };
   const removeClassColor = ({ subjectCode, groupCode }) => {
-    const period = getColorPeriodById({ subjectCode, groupCode });
+    const period = getSubjectById({ subjectCode, groupCode });
     if (period) enableColor(period.className);
-    setColorsPeriod(
-      colorsPeriod.filter(
+    setGroupSubjects(
+      groupSubjects.filter(
         (period) =>
           !(
             period.subjectCode === subjectCode && period.groupCode === groupCode
@@ -163,12 +163,12 @@ export function CalendarProvider({ children }) {
   return (
     <CalendarContext.Provider
       value={{
-        selectedSubjects,
+        subjectGroupPeriods,
         addSubject,
         removeSubject,
-        colorsPeriod,
+        groupSubjects,
         collisions,
-        getColorPeriodById,
+        getSubjectById,
       }}>
       {children}
     </CalendarContext.Provider>

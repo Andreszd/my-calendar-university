@@ -5,10 +5,10 @@ import { mapRow, mapColums, days } from 'pages/features/Calendar/constants';
 
 import CardCalendar from 'pages/features/Calendar/CardCalendar';
 
-export default function TimeSlotGroup({ row, col, hourRange, day, className }) {
+export default function TimeSlotGroup({ row, col, hourRange, day }) {
   const [subjectPeriod, setSubjectPeriod] = useState(null);
   const [colorClass, setColorClass] = useState('');
-  const { selectedSubjects, collisions, getColorPeriodById } =
+  const { subjectGroupPeriods, collisions, getSubjectById } =
     useContext(CalendarContext);
 
   useEffect(() => {
@@ -21,9 +21,9 @@ export default function TimeSlotGroup({ row, col, hourRange, day, className }) {
       }
     }
     if (!period) {
-      period = getMatchingSubjectPeriod(selectedSubjects);
+      period = getMatchingSubjectPeriod(subjectGroupPeriods);
       if (period) {
-        const periodColor = getColorPeriodById(period);
+        const periodColor = getSubjectById(period);
         if (periodColor) setColorClass(periodColor?.className);
         setSubjectPeriod(period);
       }
@@ -33,7 +33,7 @@ export default function TimeSlotGroup({ row, col, hourRange, day, className }) {
       setColorClass('');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedSubjects, collisions]);
+  }, [subjectGroupPeriods, collisions]);
 
   const getMatchingSubjectPeriod = (periods) => {
     return periods.find(
