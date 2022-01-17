@@ -6,7 +6,6 @@ import './UserCalendar.css';
 const UserCalendar = () => (
   <div className="user-calendar">
     <Container>
-      <HeaderUserCalendar />
       <WeekCalendar />
     </Container>
   </div>

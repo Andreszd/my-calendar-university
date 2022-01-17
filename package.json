@@ -16,6 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "cc": "node ./src/scripts/index.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -38,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "inquirer": "^8.2.0"
   }
 }

@@ -7,7 +7,7 @@ import { mapRow, mapColums } from 'pages/features/Calendar/constants';
 import './HeaderCalendar.css';
 
 const headers = [
-  'hrs',
+  'Hrs',
   'Monday',
   'Tuesday',
   'Wednesday',
