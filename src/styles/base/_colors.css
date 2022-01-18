@@ -22,17 +22,19 @@
   --gray-20: #a1a4b9;
   --gray-30: #979dc3;
   --gray-40: #7a7e9d;
-  --blue-base-10: #eeeffd;
-  --blue-base-20: #eceff1;
-  --blue-10: #4d76fd;
-  --blue-20: #43538c;
+  --blue-10: rgba(77, 118, 253, 0.15);
+  --blue-20: #4d76fd;
   --black-10: #1b1f31;
   --violet-10: #f5eafd;
   --violet-20: #b86df7;
-  --cyan-10: #e8f5e9;
+  --cyan-10: rgba(86, 204, 242, 0.15);
   --cyan-20: #56ccf2;
   --yellow-10: #fff3e0;
   --yellow-20: #ffc263;
   --red-10: rgba(238, 66, 66, 0.15);
   --red-20: rgba(238, 66, 66, 1);
+  --green-10: rgba(111, 207, 151, 0.15);
+  --green-20: rgba(111, 207, 151, 1);
+  --orange-10: rgba(242, 153, 74, 0.15);
+  --orange-20: #f2994a;
 }

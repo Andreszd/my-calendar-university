@@ -1,25 +1,23 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext } from 'react';
 import Checkbox from 'components/atoms/Checkbox';
 
 import PropTypes from 'prop-types';
 import { CalendarContext } from 'provider/calendarProvider';
 
 export default function CheckboxGroup({ group, code, subject }) {
-  const [isChecked, setIsChecked] = useState(false);
   const { addSubject, removeSubject, getSubjectById } =
     useContext(CalendarContext);
 
-  useEffect(() => {
+  const isChecked = () => {
     const finded = getSubjectById({
       subjectCode: subject.code,
       groupCode: group.code,
     });
-    if (finded) setIsChecked(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    return finded ? true : false;
+  };
 
-  const handleOnChange = () => {
-    if (!isChecked) {
+  const handleOnChange = (evt) => {
+    if (evt.target.checked) {
       addSubject({
         subjectName: subject.name,
         schedule: group.schedule,
@@ -29,13 +27,12 @@ export default function CheckboxGroup({ group, code, subject }) {
     } else {
       removeSubject({ subjectCode: subject.code, groupCode: group.code });
     }
-    setIsChecked(!isChecked);
   };
   return (
     <Checkbox
       text={group.teacher}
       id={code}
-      isChecked={isChecked}
+      isChecked={isChecked()}
       onChange={handleOnChange}
     />
   );
