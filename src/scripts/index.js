@@ -55,10 +55,10 @@ const options = [
 
 function createFiles({ nameComponent, path, typeOf }) {
   try {
-    const dirPath = lPath.join(__dirname, '../');
-    if (!fs.existsSync(path)) throw Error('Path not exist');
+    const basePath = lPath.join(__dirname, '../');
     if (lPath.isAbsolute(path)) throw Error('Path should be relative');
-    const newPath = `${dirPath}/${nameComponent}`;
+    if (!fs.existsSync(`${basePath}/${path}`)) throw Error('Path not exist');
+    const newPath = `${basePath}/${path}/${nameComponent}`;
     fs.mkdirSync(newPath);
     lib[typeOf]({ path: newPath, nameComponent });
   } catch (err) {

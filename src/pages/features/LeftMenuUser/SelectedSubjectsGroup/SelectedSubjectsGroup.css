@@ -1,0 +1,34 @@
+.subjects-group {
+  font-size: var(--size-font-small);
+}
+.subjects-group__list {
+  position: relative;
+  list-style: none;
+  padding-left: 0;
+}
+
+.subjects-group__item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2rem;
+  align-items: center;
+  color: var(--gray-40);
+  margin-bottom: 1rem;
+}
+.subjects-group__text {
+  font-weight: 500;
+  margin: 0;
+}
+.subjects-group__item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 3px solid black;
+}

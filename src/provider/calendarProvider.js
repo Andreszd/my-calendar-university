@@ -30,6 +30,7 @@ export function CalendarProvider({ children }) {
     setGroupSubjects([
       ...groupSubjects,
       {
+        subjectName: subject?.subjectName,
         subjectCode: subject?.subjectCode,
         groupCode: subject?.groupCode,
         className: getRandomClassColor(),
