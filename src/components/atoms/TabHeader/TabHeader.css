@@ -1,0 +1,16 @@
+.tab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  border-bottom: 1px solid var(--gray-10);
+  margin-bottom: 10px;
+  color: var(--blue-20);
+}
+.tab-header__icon {
+  transform: rotate(180deg);
+  transition: transform ease var(--base-time-transition);
+}
+.tab-header__icon.is-active {
+  transform: rotate(0deg);
+}

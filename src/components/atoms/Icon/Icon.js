@@ -6,11 +6,11 @@ import classNames from 'classnames';
 
 import PropTypes from 'prop-types';
 import './Icon.css';
-const Icon = ({ type, hasBackground, size, hasInheritedColor }) => {
+const Icon = ({ type, hasBackground, size, hasInheritedColor, className }) => {
   const Svg = mapIcon(type);
   return (
     <div
-      className={classNames('icon', {
+      className={classNames(`icon ${className}`, {
         'has-background': hasBackground,
         'has-inherited-color': hasInheritedColor,
       })}>
@@ -23,10 +23,12 @@ Icon.propTypes = {
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl']).isRequired,
   hasBackground: PropTypes.bool,
   hasInheritedColor: PropTypes.bool,
+  className: PropTypes.string,
 };
 Icon.defaultProps = {
   hasBackground: false,
   hasInheritedColor: true,
+  className: '',
 };
 
 export default Icon;

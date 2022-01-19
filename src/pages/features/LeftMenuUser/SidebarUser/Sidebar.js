@@ -11,9 +11,7 @@ const SidebarUser = () => {
 
   return (
     <div className="sidebar">
-      <TransitionComponent isMounted={isShowing}>
-        <SelectedSubjectsGroup />
-      </TransitionComponent>
+      <SelectedSubjectsGroup />
       <SubjectsOfCarrer isShowing={isShowing} setShow={switchShow} />
     </div>
   );

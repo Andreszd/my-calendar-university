@@ -4,5 +4,5 @@
   transition: max-height linear var(--base-time-transition);
 }
 .is-mounted {
-  max-height: 200px;
+  max-height: 320px;
 }
