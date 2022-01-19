@@ -49,7 +49,6 @@ const getRandomClassColor = () => {
 
   while (!className) {
     idx = getRandomNumber(colors.length - 1, 0);
-    console.log('hello');
     if (colors[idx] && !colors[idx].isUsed) {
       colors[idx].isUsed = true;
       return colors[idx].className;
@@ -63,7 +62,6 @@ const enableColor = (className) => {
 };
 
 const isAllClassUsed = () => {
-  console.log(colors);
   return colors.every(({ isUsed }) => isUsed === true);
 };
 
