@@ -48,7 +48,8 @@ const getRandomClassColor = () => {
   if (isAllClassUsed()) return 'default-color';
 
   while (!className) {
-    idx = getRandomNumber(0, colors.length - 1);
+    idx = getRandomNumber(colors.length - 1, 0);
+    console.log('hello');
     if (colors[idx] && !colors[idx].isUsed) {
       colors[idx].isUsed = true;
       return colors[idx].className;
@@ -62,11 +63,12 @@ const enableColor = (className) => {
 };
 
 const isAllClassUsed = () => {
+  console.log(colors);
   return colors.every(({ isUsed }) => isUsed === true);
 };
 
 const getRandomNumber = (max, min) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+  return Math.round(Math.random() * (max - min) + min);
 };
 
 export { getRandomClassColor, enableColor };
