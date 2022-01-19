@@ -8,7 +8,7 @@ import CardCalendar from 'pages/features/Calendar/CardCalendar';
 export default function TimeSlotGroup({ row, col, hourRange, day }) {
   const [subjectPeriod, setSubjectPeriod] = useState(null);
   const [colorClass, setColorClass] = useState('');
-  const { subjectGroupPeriods, collisions, getSubjectById } =
+  const { subjectGroupPeriods, collisions, modifiedGroups, getSubjectById } =
     useContext(CalendarContext);
 
   useEffect(() => {
@@ -18,6 +18,16 @@ export default function TimeSlotGroup({ row, col, hourRange, day }) {
       if (period && subjectPeriod) {
         setSubjectPeriod(period);
         setColorClass('collision');
+      }
+    }
+    if (!period && modifiedGroups.length > 0) {
+      period = getMatchingSubjectPeriod(modifiedGroups);
+      if (period) {
+        console.log('entreuwu');
+        console.log(hourRange);
+        const periodColor = getSubjectById(period);
+        if (periodColor) setColorClass(periodColor?.className);
+        setSubjectPeriod(period);
       }
     }
     if (!period) {
@@ -33,7 +43,7 @@ export default function TimeSlotGroup({ row, col, hourRange, day }) {
       setColorClass('');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [subjectGroupPeriods, collisions]);
+  }, [subjectGroupPeriods, collisions, modifiedGroups]);
 
   const getMatchingSubjectPeriod = (periods) => {
     return periods.find(
@@ -74,9 +84,9 @@ export default function TimeSlotGroup({ row, col, hourRange, day }) {
         {subjectPeriod?.subjectNames && (
           <>
             <span>{subjectPeriod.subjectNames[0]}</span>
-            <span>G:{subjectPeriod?.groupCodes[0]}</span>
+            <span>G:{subjectPeriod?.createdBy?.groupCodes[0]}</span>
             <span>{subjectPeriod.subjectNames[1]}</span>
-            <span>G:{subjectPeriod?.groupCodes[1]}</span>
+            <span>G:{subjectPeriod?.createdBy?.groupCodes[1]}</span>
           </>
         )}
       </CardCalendar>

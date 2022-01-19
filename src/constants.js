@@ -1,0 +1,1 @@
+export const MAX_SUBJECTS_GROUP_SELECTED = 8;

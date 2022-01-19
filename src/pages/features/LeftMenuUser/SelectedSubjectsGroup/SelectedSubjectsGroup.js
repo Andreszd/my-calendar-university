@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import Heading from 'components/atoms/Heading';
 import ButtonIcon from 'components/molecules/ButtonIcon';
 
@@ -8,12 +8,7 @@ import './SelectedSubjectsGroup.css';
 
 export default function SelectedSubjectsGroup() {
   const { groupSubjects, removeSubject } = useContext(CalendarContext);
-
-  useEffect(() => {
-    console.log('renderize');
-  }, [groupSubjects]);
-
-  console.log('render out');
+  //TODO handler re-renders
   return (
     <section className="subjects-group">
       <Heading typeTag="h2">Selected</Heading>
