@@ -4,8 +4,8 @@ import useHandlerActive from 'hooks/useHandlerActive';
 
 import './Tab.css';
 
-export default function Tab({ children, text }) {
-  const { isShowing, switchShow } = useHandlerActive();
+export default function Tab({ children, text, isActive }) {
+  const { isShowing, switchShow } = useHandlerActive(isActive);
 
   return (
     <div className="tab">
@@ -21,5 +21,5 @@ export default function Tab({ children, text }) {
 Tab.propTypes = {
   children: PropTypes.node.isRequired,
   text: PropTypes.string.isRequired,
+  isActive: PropTypes.bool,
 };
-

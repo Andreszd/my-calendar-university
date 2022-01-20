@@ -1,0 +1,12 @@
+.careers-item {
+  padding: 0.5rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--gray-10);
+  user-select: none;
+  border-left: 3px solid transparent;
+}
+
+.careers-item:hover {
+  background-color: var(--white-20);
+  border-left-color: var(--blue-20);
+}
