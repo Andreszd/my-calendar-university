@@ -1,18 +1,19 @@
-import SubjectsOfCarrer from '../SubjectsOfCarreer';
-import SelectedSubjectsGroup from 'pages/features/LeftMenuUser/SelectedSubjectsGroup';
-import TransitionComponent from 'hoc/TransitionComponent';
+import { useState } from 'react';
 
-import useHandlerActive from 'hooks/useHandlerActive';
+import SubjectsOfCarrer from '../SubjectsOfCarreer';
+import Careers from '../Careers';
+import SelectedSubjectsGroup from 'pages/features/LeftMenuUser/SelectedSubjectsGroup';
 
 import './Sidebar.css';
 
 const SidebarUser = () => {
-  const { isShowing, switchShow } = useHandlerActive(false);
+  const [selectedCareer, setSelectedCareer] = useState(null);
 
   return (
     <div className="sidebar">
-      <SelectedSubjectsGroup />
-      <SubjectsOfCarrer isShowing={isShowing} setShow={switchShow} />
+      {!selectedCareer && <Careers selectCareer={setSelectedCareer} />}
+      {selectedCareer && <SelectedSubjectsGroup />}
+      {selectedCareer && <SubjectsOfCarrer selectedCareer={selectedCareer} />}
     </div>
   );
 };

@@ -3,14 +3,20 @@
   justify-content: space-between;
   align-items: center;
 }
-.header-subjects__icon {
+
+.header-section {
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--gray-10);
+  border-left: 3px solid var(--blue-20);
+  padding: 0 10px;
+  margin-bottom: 10px;
   color: var(--blue-20);
+}
+.header-section__icon {
   transform: rotate(180deg);
   transition: transform ease var(--base-time-transition);
 }
-.isActive {
+
+.tab-header__icon.is-active {
   transform: rotate(0deg);
-}
-.header-subjects:hover {
-  cursor: pointer;
 }

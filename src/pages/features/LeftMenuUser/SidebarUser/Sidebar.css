@@ -1,5 +1,6 @@
 .sidebar {
-    grid-area: sidebar;
-    padding: 2rem;
-    background-color: var(--white-10);
+  grid-area: sidebar;
+  padding: 2rem 1.2rem;
+  background-color: var(--white-10);
+  overflow-y: scroll;
 }

@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import Heading from 'components/atoms/Heading';
 import ButtonIcon from 'components/molecules/ButtonIcon';
 import Tab from 'components/molecules/Tab';
 

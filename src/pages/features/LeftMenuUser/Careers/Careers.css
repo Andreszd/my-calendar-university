@@ -1,0 +1,10 @@
+.careers-list {
+  overflow: hidden;
+  list-style: none;
+  padding-left: 0;
+  font-size: var(--size-font-small);
+}
+.careers-list__item {
+  margin-bottom: 1rem;
+  color: var(--black-10);
+}
