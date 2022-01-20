@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { getCareer } from '../services/assignatures';
 
-export default function useCareer() {
+export default function useCareerInfo(code = '') {
   const [career, setCareer] = useState({});
   const [semesters, setSemesters] = useState([]);
   const [semester, setSemester] = useState(null);
 
   useEffect(() => {
-    getCareer('399501').then((res) => {
+    getCareer(code).then((res) => {
       setCareer(res);
       setSemesters(getAllSemesters(res));
     });
