@@ -8,12 +8,18 @@ import './Sidebar.css';
 
 const SidebarUser = () => {
   const [selectedCareer, setSelectedCareer] = useState(null);
+  const removeCareer = () => setSelectedCareer(null);
 
   return (
     <div className="sidebar">
       {!selectedCareer && <Careers selectCareer={setSelectedCareer} />}
       {selectedCareer && <SelectedSubjectsGroup />}
-      {selectedCareer && <SubjectsOfCarrer selectedCareer={selectedCareer} />}
+      {selectedCareer && (
+        <SubjectsOfCarrer
+          selectedCareer={selectedCareer}
+          removeCareer={removeCareer}
+        />
+      )}
     </div>
   );
 };

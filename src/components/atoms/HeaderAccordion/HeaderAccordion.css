@@ -1,5 +1,9 @@
 .accordion__header {
+  font-weight: 500;
+  letter-spacing: 1px;
   position: relative;
+  border-left: 3px solid var(--blue-20);
+  padding-left: 10px;
   border-bottom: 1px solid var(--gray-10);
   padding-right: 1rem;
   user-select: none;
@@ -14,9 +18,9 @@
   right: 25px;
   margin: auto;
   bottom: 0;
-  width: 1px;
+  width: 2px;
   height: 12px;
-  background-color: var(--black-10);
+  background-color: var(--blue-20);
   transition: transform ease 0.3s;
 }
 .accordion__header::after {

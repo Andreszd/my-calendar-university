@@ -57,7 +57,9 @@
   color: var(--green-20);
 }
 .card-calendar--color-8 {
-  background-color: var(--gray-20);
+  background-color: var(--dark-green-10);
+  border-left: 3px solid var(--dark-green-20);
+  color: var(--dark-green-20);
 }
 
 .card-calendar.card-calendar--collision {
@@ -105,6 +107,8 @@
   color: var(--white-10);
 }
 .card-calendar--color-8:hover {
+  background-color: var(--dark-green-20);
+  color: var(--white-10);
 }
 .card-calendar--color-1:hover,
 .card-calendar--color-2:hover,

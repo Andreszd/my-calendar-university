@@ -9,6 +9,7 @@ import './SelectedSubjectsGroup.css';
 export default function SelectedSubjectsGroup() {
   const { groupSubjects, removeSubject } = useContext(CalendarContext);
   //TODO handler re-renders
+  if (groupSubjects.length === 0) return <></>;
   return (
     <section className="subjects-group">
       <Tab text="Selected Groups">
@@ -34,4 +35,3 @@ export default function SelectedSubjectsGroup() {
     </section>
   );
 }
-

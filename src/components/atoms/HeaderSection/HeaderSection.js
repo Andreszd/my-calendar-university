@@ -8,17 +8,23 @@ import './HeaderSection.css';
 
 const HeaderSection = ({ title, onClick, isShowing }) => {
   return (
-    <header className="l-flex-space-between header-section" onClick={onClick}>
+    <header
+      className={classNames('l-flex-space-between header-section', {
+        'is-clicked': onClick ? true : false,
+      })}
+      onClick={onClick}>
       <Heading type="h2" textTransform="uppercase" size="md">
         {title}
       </Heading>
-      <Icon
-        type="icon-arrow-up"
-        size="sm"
-        className={classNames('tab-header__icon', {
-          'is-active': isShowing,
-        })}
-      />
+      {onClick && (
+        <Icon
+          type="icon-arrow-up"
+          size="sm"
+          className={classNames('tab-header__icon', {
+            'is-active': isShowing,
+          })}
+        />
+      )}
     </header>
   );
 };

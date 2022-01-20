@@ -4,14 +4,15 @@
 .subjects-group__list {
   position: relative;
   list-style: none;
-  padding-left: 0;
+  padding-left: 1rem;
 }
 
 .subjects-group__item {
   position: relative;
   display: flex;
   justify-content: space-between;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 0.9em;
   align-items: center;
   color: var(--gray-40);
   margin-bottom: 1rem;
@@ -33,13 +34,13 @@
   border-color: var(--cyan-20);
 }
 .subjects-group__item--bullet-color-6.subjects-group__item::before {
-  border-color: var(--blue-10);
+  border-color: var(--red-20);
 }
 .subjects-group__item--bullet-color-7.subjects-group__item::before {
   border-color: var(--green-20);
 }
 .subjects-group__item--bullet-color-8.subjects-group__item::before {
-  border-color: var(--gray-20);
+  border-color: var(--dark-green-20);
 }
 
 .subjects-group__text {

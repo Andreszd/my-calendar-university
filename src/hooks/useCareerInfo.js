@@ -11,7 +11,7 @@ export default function useCareerInfo(code = '') {
       setCareer(res);
       setSemesters(getAllSemesters(res));
     });
-  }, []);
+  }, [code]);
 
   const getAllSemesters = (career) => {
     return career.levels.map((lvl, idx) => ({

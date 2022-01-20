@@ -6,19 +6,21 @@ import useCareerInfo from 'hooks/useCareerInfo';
 
 import './SubjectsOfCareer.css';
 
-export default function SubjectsOfCarrer({ selectedCareer }) {
+export default function SubjectsOfCarrer({ selectedCareer, removeCareer }) {
   const { semesters, semester, getSemesterByLevel } = useCareerInfo(
     selectedCareer?.careerCode
   );
 
   const onChange = (evt) => getSemesterByLevel(evt.target.value);
 
+  const handleClick = () => removeCareer();
+
   return (
-    <section>
-      <HeaderSection title="Career Subjects" />
+    <section className="subjects">
+      <HeaderSection title={selectedCareer?.careerName} />
       <Input
         type="select"
-        defaultOption="Levels"
+        defaultOption="Semesters"
         onChange={onChange}
         hasFullWidth={true}>
         {semesters.map(({ code, name }, idx) => (
@@ -28,6 +30,11 @@ export default function SubjectsOfCarrer({ selectedCareer }) {
         ))}
       </Input>
       <div className="subjects__content">
+        <p className="subjects__text">
+          <span className="subjects__link" onClick={handleClick}>
+            Change Career
+          </span>
+        </p>
         {semester?.subjects?.map((subject) => (
           <AccordionSubject subject={subject} key={subject.code} />
         ))}

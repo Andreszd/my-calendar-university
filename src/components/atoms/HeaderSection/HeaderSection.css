@@ -12,6 +12,12 @@
   margin-bottom: 10px;
   color: var(--blue-20);
 }
+.header-section.is-clicked {
+  user-select: none;
+}
+.header-section.is-clicked:hover {
+  cursor: pointer;
+}
 .header-section__icon {
   transform: rotate(180deg);
   transition: transform ease var(--base-time-transition);

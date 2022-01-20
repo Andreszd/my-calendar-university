@@ -1,5 +1,6 @@
-import "./ItemAccordion.css";
+import './ItemAccordion.css';
 
 export default function ItemAccordion({ children }) {
-    return <li className="accordion__item">{children}</li>;
+  //TODO delete me
+  return <li className="accordion__item">{children}</li>;
 }
