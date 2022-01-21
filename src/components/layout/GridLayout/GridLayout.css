@@ -1,9 +1,8 @@
 .l-grid {
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: 70px auto;
-    grid-template-areas: "header header" "sidebar calendar";
-    background-color: var(--white-20);
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 70px auto;
+  grid-template-areas: 'header header' 'sidebar calendar';
 }

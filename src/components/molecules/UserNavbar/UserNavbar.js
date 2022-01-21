@@ -1,11 +1,10 @@
-import ButtonIcon from "../ButtonIcon/ButtonIcon";
+import ToggleDarkMode from 'components/atoms/ToggleDarkMode';
 
-import "./UserNavbar.css";
+import './UserNavbar.css';
 const UserNavabar = () => (
-    <nav className="user-navbar">
-        <ButtonIcon type="quaternary"></ButtonIcon>
-        <ButtonIcon type="quaternary" icon="icon-save"></ButtonIcon>
-    </nav>
+  <nav className="user-navbar">
+    <ToggleDarkMode />
+  </nav>
 );
 
 export default UserNavabar;

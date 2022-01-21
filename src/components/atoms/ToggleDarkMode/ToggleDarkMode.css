@@ -1,0 +1,42 @@
+.toggle-dark-mode {
+  position: relative;
+  width: 60px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--blue-20);
+}
+.toggle-dark-mode:hover {
+  cursor: pointer;
+}
+.toggle-dark-mode.is-active.toggle-dark-mode::before {
+  transform: translateX(100%);
+  background-color: #fff;
+}
+.toggle-dark-mode.is-active.toggle-dark-mode::after {
+  transform: scale(1);
+  transform: translateX(95%);
+}
+.toggle-dark-mode::after,
+.toggle-dark-mode::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  margin: auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition-property: transform, background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+.toggle-dark-mode::after {
+  left: -8px;
+  transform: scale(0.00001);
+  background-color: var(--blue-20);
+}
+.toggle-dark-mode::before {
+  left: 5px;
+  background-color: var(--yellow-20);
+  border-radius: 50%;
+}

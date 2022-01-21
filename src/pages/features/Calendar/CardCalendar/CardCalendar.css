@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid var(--gray-10);
-  border-left: 1px solid var(--gray-10);
+  border-top: 1px solid var(--border-color-card);
+  border-left: 1px solid var(--border-color-card);
   text-align: center;
   user-select: none;
 }

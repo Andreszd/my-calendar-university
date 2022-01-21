@@ -1,21 +1,22 @@
 .week-calendar {
-    max-width: 100%;
-    width: 100%;
-    overflow: auto;
-    background-color: var(--white-10);
-    border-top-left-radius: 1rem;
+  max-width: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: var(--white-10);
+  border-top-left-radius: 1rem;
 }
 .week-calendar::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-    background-color: #f5f5f5;
+  width: 10px;
+  height: 10px;
+  background-color: var(--white-10);
 }
 .week-calendar::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: var(--gray-10);
+  border-radius: 10px;
+  background-color: var(--bg-scrollbar);
 }
 .week-calendar::-webkit-scrollbar-track {
-    border: 1px solid var(--gray-10);
-    border-radius: 10px;
-    background-color: #f5f5f5;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  background-color: var(--white-10);
 }

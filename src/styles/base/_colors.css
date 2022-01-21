@@ -12,6 +12,10 @@
   --unselected-mail: #f1f2f7;
   --calendar-border-color: #cbcfe0;
   --main-container-bg: #f0f0f7;
+  --color-hover-primary: rgba(77, 118, 253, 0.1);
+  --bg-scrollbar: #cbcfe0;
+  --bg-dark-scrollbar: #717790;
+  --border-color-card: #cbcfe0;
 
   --white-10: #fff;
   --white-20: #f1f2f7;
@@ -25,12 +29,12 @@
   --blue-10: rgba(77, 118, 253, 0.15);
   --blue-20: #4d76fd;
   --black-10: #1b1f31;
-  --violet-10: #f5eafd;
+  --violet-10: rgba(184, 109, 247, 0.15);
   --violet-20: #b86df7;
   --cyan-10: rgba(86, 204, 242, 0.15);
   --cyan-20: #56ccf2;
-  --yellow-10: #fff3e0;
-  --yellow-20: #ffc263;
+  --yellow-10: rgba(255, 194, 99, 0.15);
+  --yellow-20: rgba(255, 194, 99, 1);
   --red-10: rgba(238, 66, 66, 0.15);
   --red-20: rgba(238, 66, 66, 1);
   --green-10: rgba(111, 207, 151, 0.15);

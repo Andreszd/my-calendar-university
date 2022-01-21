@@ -12,6 +12,8 @@ body {
   margin: 0;
   font-size: 15px;
   accent-color: var(--blue-10);
+  background-color: var(--body-bg-color);
+  color: var(--black-10);
 }
 :root {
   --base-time-transition: 0.3s;

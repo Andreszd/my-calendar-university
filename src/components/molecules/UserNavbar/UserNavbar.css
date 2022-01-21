@@ -1,5 +1,5 @@
 .user-navbar {
-    display: flex;
-    gap: 1rem;
-    color: var(--blue-10);
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0 2rem;
 }

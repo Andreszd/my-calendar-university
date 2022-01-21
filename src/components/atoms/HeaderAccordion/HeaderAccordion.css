@@ -4,7 +4,7 @@
   position: relative;
   border-left: 3px solid var(--blue-20);
   padding-left: 10px;
-  border-bottom: 1px solid var(--gray-10);
+  border-bottom: 1px solid var(--border-color);
   padding-right: 1rem;
   user-select: none;
 }
@@ -37,7 +37,7 @@
 }
 .accordion__header:hover,
 .accordion__header.is-active {
-  background-color: var(--white-20);
+  background-color: var(--color-hover-primary);
 }
 .accordion__text {
   margin: 0;
