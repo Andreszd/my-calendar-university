@@ -15,7 +15,7 @@ export function CalendarProvider({ children }) {
 
   const addSubject = (subject) => {
     if (groupSubjects.length > MAX_SUBJECTS_GROUP_SELECTED)
-      return console.error('cant to add more than 8 subjects');
+      return console.error('cant add more than 8 subjects');
     const newSubject = copyAllSubject(subject);
 
     const { subjectCode, groupCode, subjectName } = newSubject;
@@ -80,7 +80,11 @@ export function CalendarProvider({ children }) {
     return (
       caseCollisionOne({ bStart, bEnd, aStart, aEnd }) ||
       caseCollisionTwo({ bStart, bEnd, aStart, aEnd }) ||
-      caseCollisionThree({ bStart, bEnd, aStart, aEnd })
+      caseCollisionThree({ bStart, bEnd, aStart, aEnd }) ||
+      caseCollisionFour({ bStart, bEnd, aStart, aEnd }) ||
+      caseCollisionFive({ bStart, bEnd, aStart, aEnd }) ||
+      caseCollisionSix({ bStart, bEnd, aStart, aEnd }) ||
+      caseCollisionSeven({ bStart, bEnd, aStart, aEnd })
     );
   };
 
@@ -94,10 +98,16 @@ export function CalendarProvider({ children }) {
     bStart < aStart && bEnd > aStart && bEnd < aEnd;
 
   const caseCollisionFour = ({ aStart, aEnd, bStart, bEnd }) =>
-    bStart > aStart && bEnd < aEnd && bEnd === aEnd;
+    bStart > aStart && bEnd === aEnd;
 
   const caseCollisionFive = ({ aStart, aEnd, bStart, bEnd }) =>
+    bStart < aStart && bEnd === aEnd;
+
+  const caseCollisionSix = ({ aStart, aEnd, bStart, bEnd }) =>
     bStart === aStart && bEnd < aEnd;
+
+  const caseCollisionSeven = ({ aStart, aEnd, bStart, bEnd }) =>
+    bStart === aStart && bEnd > aEnd;
 
   const buildCollision = (
     periodOne,
@@ -171,6 +181,62 @@ export function CalendarProvider({ children }) {
         start: periodTwo.end,
         createdBy,
         duration: amountPeriodsByRangePeriod(bEnd, aEnd),
+      });
+    }
+    if (caseCollisionFour({ bStart, bEnd, aStart, aEnd })) {
+      collisionsPeriod.push({
+        ...newPeriod,
+        end: periodTwo.end,
+        start: periodTwo.start,
+        duration: amountPeriodsByRangePeriod(bStart, bEnd),
+      });
+      newPeriods.push({
+        ...periodOne,
+        end: periodTwo.start,
+        createdBy,
+        duration: amountPeriodsByRangePeriod(aStart, bStart),
+      });
+    }
+    if (caseCollisionFive({ bStart, bEnd, aStart, aEnd })) {
+      collisionsPeriod.push({
+        ...newPeriod,
+        end: periodTwo.end,
+        start: periodOne.start,
+        duration: amountPeriodsByRangePeriod(aStart, bEnd),
+      });
+      newPeriods.push({
+        ...periodTwo,
+        end: periodOne.start,
+        createdBy,
+        duration: amountPeriodsByRangePeriod(bStart, aStart),
+      });
+    }
+    if (caseCollisionSix({ bStart, bEnd, aStart, aEnd })) {
+      collisionsPeriod.push({
+        ...newPeriod,
+        end: periodTwo.end,
+        start: periodOne.start,
+        duration: amountPeriodsByRangePeriod(aStart, bEnd),
+      });
+      newPeriods.push({
+        ...periodOne,
+        start: periodTwo.end,
+        createdBy,
+        duration: amountPeriodsByRangePeriod(bEnd, aEnd),
+      });
+    }
+    if (caseCollisionSeven({ bStart, bEnd, aStart, aEnd })) {
+      collisionsPeriod.push({
+        ...newPeriod,
+        end: periodOne.end,
+        start: periodOne.start,
+        duration: amountPeriodsByRangePeriod(aStart, aEnd),
+      });
+      newPeriods.push({
+        ...periodTwo,
+        start: periodOne.end,
+        createdBy,
+        duration: amountPeriodsByRangePeriod(aEnd, bEnd),
       });
     }
   };

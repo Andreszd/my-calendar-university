@@ -23,8 +23,6 @@ export default function TimeSlotGroup({ row, col, hourRange, day }) {
     if (!period && modifiedGroups.length > 0) {
       period = getMatchingSubjectPeriod(modifiedGroups);
       if (period) {
-        console.log('entreuwu');
-        console.log(hourRange);
         const periodColor = getSubjectById(period);
         if (periodColor) setColorClass(periodColor?.className);
         setSubjectPeriod(period);
