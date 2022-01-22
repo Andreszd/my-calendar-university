@@ -17,7 +17,7 @@
 .card-calendar.time-slot-group {
   padding: 1rem 0;
   flex-direction: column;
-  font-size: var(--size-font-small);
+  font-size: var(--size-font-very-small);
   font-weight: 500;
 }
 
@@ -122,4 +122,12 @@
   border-right: none;
   border-bottom: none;
   transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  .card-calendar:nth-of-type(1) {
+    border-top-left-radius: 0px;
+  }
+  .time-slot-group {
+  }
 }

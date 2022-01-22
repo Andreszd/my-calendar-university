@@ -20,17 +20,19 @@ export default function SubjectsOfCarrer({ selectedCareer, removeCareer }) {
     <section className="subjects">
       <HeaderSection title={selectedCareer?.careerName} />
       {isLoading && <Spinner />}
-      <Input
-        type="select"
-        defaultOption="Semesters"
-        onChange={onChange}
-        hasFullWidth={true}>
-        {semesters.map(({ code, name }, idx) => (
-          <option key={idx} value={code}>
-            {name}
-          </option>
-        ))}
-      </Input>
+      {!isLoading && (
+        <Input
+          type="select"
+          defaultOption="Semesters"
+          onChange={onChange}
+          hasFullWidth={true}>
+          {semesters.map(({ code, name }, idx) => (
+            <option key={idx} value={code}>
+              {name}
+            </option>
+          ))}
+        </Input>
+      )}
       <div className="subjects__content">
         <p className="subjects__text">
           <span className="subjects__link" onClick={handleClick}>
