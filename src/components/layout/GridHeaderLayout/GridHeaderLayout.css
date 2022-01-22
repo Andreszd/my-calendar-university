@@ -1,6 +1,13 @@
 .l-grid-header {
-    height: 100%;
-    display: grid;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 300px 1fr;
+}
+@media screen and (max-width: 768px) {
+  .l-grid-header {
+    grid-template-columns: 50px 170px 60px;
+    justify-content: space-between;
     align-items: center;
-    grid-template-columns: 300px 1fr;
+  }
 }

@@ -6,10 +6,18 @@ import classNames from 'classnames';
 
 import PropTypes from 'prop-types';
 import './Icon.css';
-const Icon = ({ type, hasBackground, size, hasInheritedColor, className }) => {
+const Icon = ({
+  type,
+  hasBackground,
+  size,
+  hasInheritedColor,
+  className,
+  onClick,
+}) => {
   const Svg = mapIcon(type);
   return (
     <div
+      onClick={onClick}
       className={classNames(`icon ${className}`, {
         'has-background': hasBackground,
         'has-inherited-color': hasInheritedColor,
@@ -23,6 +31,7 @@ Icon.propTypes = {
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl']).isRequired,
   hasBackground: PropTypes.bool,
   hasInheritedColor: PropTypes.bool,
+  onClick: PropTypes.func,
   className: PropTypes.string,
 };
 Icon.defaultProps = {

@@ -4,14 +4,17 @@ import SubjectsOfCarrer from '../SubjectsOfCarreer';
 import Careers from '../Careers';
 import SelectedSubjectsGroup from 'pages/features/LeftMenuUser/SelectedSubjectsGroup';
 
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 import './Sidebar.css';
 
-const SidebarUser = () => {
+const SidebarUser = ({ isShowing }) => {
   const [selectedCareer, setSelectedCareer] = useState(null);
   const removeCareer = () => setSelectedCareer(null);
 
   return (
-    <div className="sidebar">
+    <div className={classNames('sidebar', { 'is-active': isShowing })}>
       {!selectedCareer && <Careers selectCareer={setSelectedCareer} />}
       {selectedCareer && <SelectedSubjectsGroup />}
       {selectedCareer && (
@@ -25,3 +28,7 @@ const SidebarUser = () => {
 };
 
 export default SidebarUser;
+
+SidebarUser.propTypes = {
+  isShowing: PropTypes.bool,
+};

@@ -35,11 +35,13 @@
 .is-active.accordion__header::before {
   transform: rotate(135deg);
 }
-.accordion__header:hover,
-.accordion__header.is-active {
-  background-color: var(--color-hover-primary);
-}
 .accordion__text {
   margin: 0;
   padding: 0.5rem 0;
+}
+@media screen and (min-width: 768px) {
+  .accordion__header:hover,
+  .accordion__header.is-active {
+    background-color: var(--color-hover-primary);
+  }
 }
