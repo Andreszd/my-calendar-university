@@ -1,13 +1,14 @@
 import AccordionSubject from '../AccordionSubject';
 import Input from 'components/atoms/Input';
 import HeaderSection from 'components/atoms/HeaderSection';
+import Spinner from 'components/atoms/Spinner';
 
 import useCareerInfo from 'hooks/useCareerInfo';
 
 import './SubjectsOfCareer.css';
 
 export default function SubjectsOfCarrer({ selectedCareer, removeCareer }) {
-  const { semesters, semester, getSemesterByLevel } = useCareerInfo(
+  const { semesters, semester, getSemesterByLevel, isLoading } = useCareerInfo(
     selectedCareer?.careerCode
   );
 
@@ -18,6 +19,7 @@ export default function SubjectsOfCarrer({ selectedCareer, removeCareer }) {
   return (
     <section className="subjects">
       <HeaderSection title={selectedCareer?.careerName} />
+      {isLoading && <Spinner />}
       <Input
         type="select"
         defaultOption="Semesters"

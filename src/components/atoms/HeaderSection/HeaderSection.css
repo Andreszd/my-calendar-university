@@ -5,6 +5,7 @@
 }
 
 .header-section {
+  width: 100%;
   letter-spacing: 1px;
   border-bottom: 1px solid var(--border-color);
   border-left: 3px solid var(--blue-20);

@@ -5,11 +5,14 @@ export default function useCareerInfo(code = '') {
   const [career, setCareer] = useState({});
   const [semesters, setSemesters] = useState([]);
   const [semester, setSemester] = useState(null);
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     getCareer(code).then((res) => {
       setCareer(res);
       setSemesters(getAllSemesters(res));
+      setLoading(false);
     });
   }, [code]);
 
@@ -27,5 +30,5 @@ export default function useCareerInfo(code = '') {
 
   //const getAssignaturesBySemester = (semester) => {};
 
-  return { career, semesters, semester, getSemesterByLevel };
+  return { career, semesters, semester, getSemesterByLevel, isLoading };
 }

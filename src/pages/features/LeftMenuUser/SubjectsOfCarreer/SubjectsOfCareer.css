@@ -1,8 +1,12 @@
 .subjects {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .subjects__content {
+  width: 100%;
 }
 .subjects__text {
   font-size: var(--size-font-small);

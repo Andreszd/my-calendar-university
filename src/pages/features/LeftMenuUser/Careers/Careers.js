@@ -1,20 +1,22 @@
 import HeaderSection from 'components/atoms/HeaderSection';
 import CareerItem from 'pages/features/LeftMenuUser/CareerItem';
+import Spinner from 'components/atoms/Spinner';
 
 import useCareers from 'hooks/useCareers';
 
 import './Careers.css';
 
 export default function Careers({ selectCareer }) {
-  const { careers } = useCareers();
+  const { careers, isLoading } = useCareers();
 
   const changeCareer = (career) => {
     selectCareer(career);
   };
 
   return (
-    <section>
+    <section className="careers">
       <HeaderSection title="Careers" />
+      {isLoading && <Spinner />}
       <ul className="careers-list">
         {careers?.map((career) => (
           <CareerItem
@@ -27,4 +29,3 @@ export default function Careers({ selectCareer }) {
     </section>
   );
 }
-
