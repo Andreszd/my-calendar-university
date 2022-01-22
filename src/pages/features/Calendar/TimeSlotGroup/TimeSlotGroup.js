@@ -73,9 +73,13 @@ export default function TimeSlotGroup({ row, col, hourRange, day }) {
         modifier={colorClass}>
         {subjectPeriod?.subjectName && (
           <>
-            <span>{subjectPeriod.subjectName}</span>
             <span>
-              {subjectPeriod.room} G:{subjectPeriod?.groupCode}
+              {subjectPeriod?.isClass === false ? '*' : ''}
+              {subjectPeriod.subjectName}
+            </span>
+            <span>
+              {subjectPeriod.room}
+              G:{subjectPeriod?.groupCode}
             </span>
           </>
         )}
