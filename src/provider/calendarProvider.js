@@ -14,8 +14,9 @@ export function CalendarProvider({ children }) {
   const [modifiedGroups, setModifiedGroups] = useState([]);
 
   const addSubject = (subject) => {
-    if (groupSubjects.length > MAX_SUBJECTS_GROUP_SELECTED)
+    if (groupSubjects.length + 1 > MAX_SUBJECTS_GROUP_SELECTED) {
       return console.error('cant add more than 8 subjects');
+    }
     const newSubject = copyAllSubject(subject);
 
     const { subjectCode, groupCode, subjectName } = newSubject;
