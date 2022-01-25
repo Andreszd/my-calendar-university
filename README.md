@@ -1,16 +1,21 @@
-# This project is using concepts atomic design 
- 
+# My University Calendar
+
+I created this app for help students of Engineering Faculty at creation his university week calendar
+
+## About Project
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This project was built using atomic design concepts for creation of IU components
+
+## Run Local 
 
 In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Demo
 
+Open https://my-calendar-university.vercel.app
