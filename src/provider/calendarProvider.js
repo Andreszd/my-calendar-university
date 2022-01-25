@@ -5,6 +5,16 @@ import { getRandomClassColor, enableColor } from 'libs/colors';
 import { MAX_SUBJECTS_GROUP_SELECTED } from 'constants.js';
 import { amountPeriodsByRangePeriod } from 'libs/calculatePeriods.js';
 
+import {
+  caseCollisionOne,
+  caseCollisionTwo,
+  caseCollisionThree,
+  caseCollisionFour,
+  caseCollisionFive,
+  caseCollisionSix,
+  caseCollisionSeven,
+} from 'libs/collisionsCases.js';
+
 export const CalendarContext = React.createContext();
 
 export function CalendarProvider({ children }) {
@@ -73,11 +83,10 @@ export function CalendarProvider({ children }) {
       setModifiedGroups([...modifiedGroups, ...newGroups]);
   };
 
-  const hasCollision = (a, b) => {
-    const aStart = parseInt(a.start);
-    const aEnd = parseInt(a.end);
-    const bStart = parseInt(b.start);
-    const bEnd = parseInt(b.end);
+  const hasCollision = (periodOne, periodTwo) => {
+    const { start: aStart, end: aEnd } = parseIntPeriodAttr(periodOne);
+    const { start: bStart, end: bEnd } = parseIntPeriodAttr(periodTwo);
+
     return (
       caseCollisionOne({ bStart, bEnd, aStart, aEnd }) ||
       caseCollisionTwo({ bStart, bEnd, aStart, aEnd }) ||
@@ -89,26 +98,10 @@ export function CalendarProvider({ children }) {
     );
   };
 
-  const caseCollisionOne = ({ bStart, bEnd, aStart, aEnd }) =>
-    bStart >= aStart && bEnd <= aEnd;
-
-  const caseCollisionTwo = ({ aStart, aEnd, bStart, bEnd }) =>
-    bEnd > aEnd && bStart > aStart && bStart < aEnd;
-
-  const caseCollisionThree = ({ aStart, aEnd, bStart, bEnd }) =>
-    bStart < aStart && bEnd > aStart && bEnd < aEnd;
-
-  const caseCollisionFour = ({ aStart, aEnd, bStart, bEnd }) =>
-    bStart > aStart && bEnd === aEnd;
-
-  const caseCollisionFive = ({ aStart, aEnd, bStart, bEnd }) =>
-    bStart < aStart && bEnd === aEnd;
-
-  const caseCollisionSix = ({ aStart, aEnd, bStart, bEnd }) =>
-    bStart === aStart && bEnd < aEnd;
-
-  const caseCollisionSeven = ({ aStart, aEnd, bStart, bEnd }) =>
-    bStart === aStart && bEnd > aEnd;
+  const parseIntPeriodAttr = ({ start, end }) => {
+    if (!start || !end) return;
+    return { start: parseInt(start), end: parseInt(end) };
+  };
 
   const buildCollision = (
     periodOne,
@@ -116,11 +109,9 @@ export function CalendarProvider({ children }) {
     collisionsPeriod,
     newPeriods
   ) => {
-    const aStart = parseInt(periodOne.start);
-    const aEnd = parseInt(periodOne.end);
-    const bStart = parseInt(periodTwo.start);
-    const bEnd = parseInt(periodTwo.end);
-    //TODO Refactor !!!!
+    const { start: aStart, end: aEnd } = parseIntPeriodAttr(periodOne);
+    const { start: bStart, end: bEnd } = parseIntPeriodAttr(periodTwo);
+
     const createdBy = {
       subjectCodes: [periodOne.subjectCode, periodTwo.subjectCode],
       groupCodes: [periodOne.groupCode, periodTwo.groupCode],
@@ -246,11 +237,14 @@ export function CalendarProvider({ children }) {
     removeClassColor({ subjectCode, groupCode });
     removeCollisions({ subjectCode, groupCode });
     removeModifiedGroups({ subjectCode, groupCode });
-    const periods = subjectGroupPeriods.filter(
-      (period) =>
-        !(period.subjectCode === subjectCode && period.groupCode === groupCode)
+    setSubjectGroupPeriods(
+      subjectGroupPeriods.filter(
+        (period) =>
+          !(
+            period.subjectCode === subjectCode && period.groupCode === groupCode
+          )
+      )
     );
-    setSubjectGroupPeriods(periods);
   };
 
   const removeModifiedGroups = ({ subjectCode, groupCode }) => {
@@ -264,6 +258,7 @@ export function CalendarProvider({ children }) {
       )
     );
   };
+
   const removeCollisions = ({ subjectCode, groupCode }) => {
     setCollisions(
       collisions.filter(
@@ -282,6 +277,7 @@ export function CalendarProvider({ children }) {
         subjectCode === period?.subjectCode && groupCode === period?.groupCode
     );
   };
+
   const removeClassColor = ({ subjectCode, groupCode }) => {
     const period = getSubjectById({ subjectCode, groupCode });
     if (period) enableColor(period.className);

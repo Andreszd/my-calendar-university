@@ -3,20 +3,25 @@ import { useState } from 'react';
 export default function useDarkMode() {
   const [isActive, setActive] = useState(false);
 
+  const defaultValueColor10 = '#fff';
+  const defaultValueColorBg = '#e4e6f5';
+  const defaultValueColorBlack10 = '#1b1f31';
+  const defaultValueColorBgScroollbar = '#cbcfe0';
+  const defaultValueColorBorder = '#e5e4e9';
+  const defaultValueColorBorderCard = '#cbcfe0';
+
+  const whiteDarkMode = '#1e1f26';
+  const bgDarkMode = '#131417';
+  const grayDarkMode = '#717790';
+
   const switchTheme = () => {
-    const defaultValueColor10 = '#fff';
-    const defaultValueColorBg = '#e4e6f5';
-    const defaultValueColorBlack10 = '#1b1f31';
-    const defaultValueColorBgScroollbar = '#cbcfe0';
-    const defaultValueColorBorder = '#e5e4e9';
-    const defaultValueColorBorderCard = '#cbcfe0';
     if (!isActive) {
-      changeCustomProperty('--white-10', '#1e1f26');
-      changeCustomProperty('--body-bg-color', '#131417');
+      changeCustomProperty('--white-10', whiteDarkMode);
+      changeCustomProperty('--body-bg-color', bgDarkMode);
       changeCustomProperty('--black-10', defaultValueColor10);
-      changeCustomProperty('--bg-scrollbar', '#717790');
-      changeCustomProperty('--border-color', '#717790');
-      changeCustomProperty('--border-color-card', '#717790');
+      changeCustomProperty('--bg-scrollbar', grayDarkMode);
+      changeCustomProperty('--border-color', grayDarkMode);
+      changeCustomProperty('--border-color-card', grayDarkMode);
     } else {
       changeCustomProperty('--white-10', defaultValueColor10);
       changeCustomProperty('--body-bg-color', defaultValueColorBg);

@@ -1,72 +1,21 @@
-import { useContext, useEffect, useState } from 'react';
-import { CalendarContext } from 'provider/calendarProvider';
-
-import { mapRow, mapColums, days } from 'pages/features/Calendar/constants';
+import useTimeSlotGroup from 'hooks/useTimeSlotGroup';
 
 import CardCalendar from 'pages/features/Calendar/CardCalendar';
 
 export default function TimeSlotGroup({ row, col, hourRange, day }) {
-  const [subjectPeriod, setSubjectPeriod] = useState(null);
-  const [colorClass, setColorClass] = useState('');
-  const { subjectGroupPeriods, collisions, modifiedGroups, getSubjectById } =
-    useContext(CalendarContext);
+  const {
+    colorClass,
+    subjectPeriod,
+    getRowsAmount,
+    getColsAmount,
+    shouldDisabled,
+  } = useTimeSlotGroup({ row, col, hourRange, day });
 
-  useEffect(() => {
-    let period = null;
-    if (collisions.length > 0) {
-      period = getMatchingSubjectPeriod(collisions);
-      if (period && subjectPeriod) {
-        setSubjectPeriod(period);
-        setColorClass('collision');
-      }
-    }
-    if (!period && modifiedGroups.length > 0) {
-      period = getMatchingSubjectPeriod(modifiedGroups);
-      if (period) {
-        const periodColor = getSubjectById(period);
-        if (periodColor) setColorClass(periodColor?.className);
-        setSubjectPeriod(period);
-      }
-    }
-    if (!period) {
-      period = getMatchingSubjectPeriod(subjectGroupPeriods);
-      if (period) {
-        const periodColor = getSubjectById(period);
-        if (periodColor) setColorClass(periodColor?.className);
-        setSubjectPeriod(period);
-      }
-    }
-    if (!period && subjectPeriod) {
-      setSubjectPeriod(null);
-      setColorClass('');
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [subjectGroupPeriods, collisions, modifiedGroups]);
-
-  const getMatchingSubjectPeriod = (periods) => {
-    return periods.find(
-      ({ start, end, day: dayOfSubjectPeriod }) =>
-        days[dayOfSubjectPeriod] === day &&
-        parseInt(hourRange.start) >= parseInt(start) &&
-        parseInt(hourRange.end) <= parseInt(end)
-    );
-  };
-  const shouldDisabled = () => {
-    return subjectPeriod && subjectPeriod.start !== hourRange.start;
-  };
-
-  const calculateRow = () => {
-    if (!subjectPeriod && !shouldDisabled()) return mapRow(row);
-    const range = mapRow(row);
-    const rowStart = range.split('/')[0];
-    const rowEnd = parseInt(range.split('/')[1]);
-    return `${rowStart}/${rowEnd + (subjectPeriod?.duration - 1)}`;
-  };
   return (
     <>
       <CardCalendar
-        row={calculateRow()}
-        col={mapColums(col)}
+        row={getRowsAmount()}
+        col={getColsAmount()}
         day={day}
         className="time-slot-group"
         isDisabled={shouldDisabled()}
