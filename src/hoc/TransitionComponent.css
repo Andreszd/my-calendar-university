@@ -1,8 +1,0 @@
-.wrapper-animation {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height linear var(--base-time-transition);
-}
-.is-mounted {
-  max-height: 320px;
-}

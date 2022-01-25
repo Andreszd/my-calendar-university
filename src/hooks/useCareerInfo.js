@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getCareer } from '../services/assignatures';
+import { getCareer } from '../services/careers';
 
 export default function useCareerInfo(code = '') {
   const [career, setCareer] = useState({});
@@ -27,8 +27,6 @@ export default function useCareerInfo(code = '') {
     const res = semesters.filter((semester) => semester.code === code)[0];
     if (res) setSemester(res);
   };
-
-  //const getAssignaturesBySemester = (semester) => {};
 
   return { career, semesters, semester, getSemesterByLevel, isLoading };
 }

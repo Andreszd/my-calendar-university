@@ -1,5 +1,5 @@
-import { baseUrl } from '../config/api.config';
-import { API } from './axios.config';
+import { baseUrl } from 'config/api.config';
+import { API } from 'config/axios.config';
 
 const getCareers = async () => {
   try {
@@ -10,4 +10,13 @@ const getCareers = async () => {
   }
 };
 
-export { getCareers };
+const getCareer = async (idCareer) => {
+  try {
+    const { data } = await API.get(`${baseUrl}/${idCareer}`);
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export { getCareers, getCareer };
