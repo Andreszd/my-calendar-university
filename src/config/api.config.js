@@ -1,2 +1,1 @@
-export const baseUrl =
-  'https://safe-ocean-97444.herokuapp.com/departments/fcyt';
+export const baseUrl = 'https://api-cappuchino.herokuapp.com/departments/fcyt';
