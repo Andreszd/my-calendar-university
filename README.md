@@ -1,6 +1,6 @@
 # My University Calendar
 
-I created this app for help students of Engineering Faculty at creation his university week calendar
+This is a alternate client of original [capuchinno](http://2022.cappuchino.scesi.umss.edu.bo/) 
 
 ## About Project
 
@@ -18,4 +18,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Demo
 
-Open https://my-calendar-university.vercel.app
+Open [my-university-calendar](https://my-calendar-university.vercel.app)
